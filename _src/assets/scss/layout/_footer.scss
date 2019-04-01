@@ -1,16 +1,14 @@
 .footer__container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexColumnCentered ();
     justify-content: center;
     height: 110px;
-    background-color: #fff;
+    background-color: $color-white100;
     width: 100%;
     margin-top: 30px;
 }
 
 .footer__info {
-    color: #6b6b6b;
+    color: $color-greyFooter;
     font-size: 0.875rem;
 }
 

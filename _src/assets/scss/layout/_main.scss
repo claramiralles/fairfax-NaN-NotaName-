@@ -5,16 +5,16 @@
 }
 
 .main__title {
-    font-family: 'Merriweather', serif;
+    font-family: $font-secondary;
     font-weight: 900;
     font-size: 1.25rem;
-    color: #e17334;
+    color: $color-orangeIcons;
 
 }
 
 .main__subtitle {
     font-size: 0.8125rem;
-    color: #114e4e;
+    color: $color-green700;
     max-width: 265px;
     margin-bottom: 17px;
     text-align: center;
@@ -43,5 +43,5 @@
 
 .far , .fas {
     font-size: 1.375rem;
-    color: #e17334;
+    color: $color-orangeIcons;
 }
