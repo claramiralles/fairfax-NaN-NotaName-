@@ -1,20 +1,18 @@
 
+@import 'core/variables';
 @import 'core/settings';
 
 
 
 //components
 @import 'components/buttons';
+@import 'components/theme-colors';
 
 
 //Pages
 
-
-
 @import 'pages/main-page';
-
-
 @import 'core/mixins';
-@import 'core/variables';
+
 
 

@@ -1,0 +1,42 @@
+.theme{
+    // display:flex;
+    margin:10px 0;
+    display:flex;
+
+
+}
+.theme-radio{
+    margin-right: 10px;
+}
+.color-box{
+    width:30px;
+    height:25px;
+    // display:inline-block;
+}
+.color-green1{
+    background-color:$color-green700;
+}
+.color-green2{
+    background-color:$color-green400;
+}
+.color-green3{
+    background-color:$color-green100;
+}
+.color-red1{
+    background-color:$color-red700;
+}
+.color-red2{
+    background-color:$color-red400;
+}
+.color-red3{
+    background-color:$color-red100;
+}
+.color-grey1{
+    background-color:$color-grey700;
+}
+.color-grey2{
+    background-color:$color-grey100;
+}
+.color-grey3{
+    background-color:$color-grey400;
+}
