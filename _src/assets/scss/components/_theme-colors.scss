@@ -1,3 +1,7 @@
+.design{ 
+    padding-top: 27px;
+    border:0px;
+}
 .theme{
     margin:20px 0;
     display:flex;
@@ -36,12 +40,7 @@
 .color-grey3{
     background-color:$color-grey400;
 }
-.title-fieldset{
-    color: $color-greyText;
-    text-transform: uppercase;
-    font-family: $font-primary;
-    font-weight: 600;
-}
+
 .description{
     color: $color-greyText;
     text-transform: uppercase;
@@ -50,13 +49,31 @@
 }
 .title-form{
     display:flex;
-    border: 1px solid blue;
+    align-items: center;
+}
+.title-fieldset{
+    color: $color-greyText;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-weight: 600;
+    flex-grow:1;
+    padding-left:10px;
 }
 .far{
     color: $color-orangeIcons;
+    display:inline-block;
 }
 .fas{
-    color: $color-orangeIcons;
+    color: $color-greyText;
     align-self: flex-end;
     align-items: center; 
+    height: 18px;
+}
+.description-theme-container{
+    display:flex;
+    justify-content: space-between;
+    padding-left:19px;
+}
+.description{
+    margin-top:23px;
 }
