@@ -1,9 +1,6 @@
 .theme{
-    // display:flex;
-    margin:10px 0;
+    margin:20px 0;
     display:flex;
-
-
 }
 .theme-radio{
     margin-right: 10px;
@@ -11,7 +8,6 @@
 .color-box{
     width:30px;
     height:25px;
-    // display:inline-block;
 }
 .color-green1{
     background-color:$color-green700;
@@ -39,4 +35,28 @@
 }
 .color-grey3{
     background-color:$color-grey400;
+}
+.title-fieldset{
+    color: $color-greyText;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-weight: 600;
+}
+.description{
+    color: $color-greyText;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-size:0.875; 
+}
+.title-form{
+    display:flex;
+    border: 1px solid blue;
+}
+.far{
+    color: $color-orangeIcons;
+}
+.fas{
+    color: $color-orangeIcons;
+    align-self: flex-end;
+    align-items: center; 
 }
