@@ -4,7 +4,10 @@
     border-bottom: 1px solid $color-greySeparator;
     max-width: 320px;
     margin: 0 auto;
+}
 
+.form__share {
+    @include flexColumnCentered();
 }
 
 .fieldset__title{
@@ -12,16 +15,21 @@
     align-items: center;
 }
 
-.far{
+.form__icons{
     color: $color-orangeIcons;
     display:inline-block;
 }
 
-.fas{
+.form__arrow-icons{
     color: $color-greyText;
     align-self: flex-end;
     align-items: center; 
     height: 18px;
+}
+
+.form__card-icon{
+    color: $color-white100;
+    font-size: 1.375rem;
 }
 
 .fieldset__title-text{
@@ -45,4 +53,11 @@
     text-transform: uppercase;
     font-family: $font-primary;
     font-size:0.875; 
+}
+
+.form__share-subtitle {
+    font-size: 1.125rem;
+    font-family: $font-primary;
+    color: $color-greyText;
+    text-align: center;
 }
