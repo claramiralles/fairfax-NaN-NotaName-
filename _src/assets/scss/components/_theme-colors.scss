@@ -1,11 +1,4 @@
-.form__fieldset{ 
-    padding-top: 27px;
-    border:0;
-    border-bottom: 1px solid $color-greySeparator;
-    max-width: 320px;
-    margin: 0 auto;
 
-}
 .theme{
     margin:20px 0;
     display:flex;
@@ -45,37 +38,4 @@
     background-color:$color-grey400;
 }
 
-.fieldset__title{
-    display:flex;
-    align-items: center;
-}
-.fieldset__title-text{
-    color: $color-greyText;
-    text-transform: uppercase;
-    font-family: $font-primary;
-    font-weight: 600;
-    flex-grow:1;
-    padding-left:10px;
-}
-.far{
-    color: $color-orangeIcons;
-    display:inline-block;
-}
-.fas{
-    color: $color-greyText;
-    align-self: flex-end;
-    align-items: center; 
-    height: 18px;
-}
-.fieldset__theme-container{
-    display:flex;
-    justify-content: space-between;
-    padding-left:19px;
-}
-.theme__description{
-    margin-top:23px;
-    color: $color-greyText;
-    text-transform: uppercase;
-    font-family: $font-primary;
-    font-size:0.875; 
-}
+
