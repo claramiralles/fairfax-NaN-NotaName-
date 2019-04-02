@@ -1,0 +1,13 @@
+.fieldset__theme-container{
+    display:flex;
+    justify-content: space-between;
+    padding-left:19px;
+}
+
+.theme__description{
+    margin-top:23px;
+    color: $color-greyText;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-size:0.875; 
+}
