@@ -1,0 +1,30 @@
+.footer__container{
+    @include flexColumnCentered ();
+    justify-content: center;
+    height: 110px;
+    background-color: $color-white100;
+    width: 100%;
+    margin-top: 30px;
+
+    @media all and (min-width:768px){
+        height: 60px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 40px;
+    }
+}
+
+.footer__info {
+    color: $color-greyFooter;
+    font-size: 0.875rem;
+}
+
+.footer__logo {
+    width: 103px;
+    height: 40px;
+    margin-top: 11px;
+
+    @media all and (min-width:768px){
+        margin-top: 0;
+    }
+}
