@@ -22,6 +22,7 @@
     align-self: flex-end;
     align-items: center; 
     height: 18px;
+    font-weight: 600;
 }
 
 .fieldset__title-text{
@@ -44,5 +45,5 @@
     color: $color-greyText;
     text-transform: uppercase;
     font-family: $font-primary;
-    font-size:0.875; 
+    font-size:0.875rem; 
 }
