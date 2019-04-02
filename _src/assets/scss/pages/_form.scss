@@ -7,17 +7,18 @@
 
 }
 
+
 .fieldset__title{
     display:flex;
     align-items: center;
 }
 
-.far{
+.form__icons{
     color: $color-orangeIcons;
     display:inline-block;
 }
 
-.fas{
+.form__arrow-icons{
     color: $color-greyText;
     align-self: flex-end;
     align-items: center; 
