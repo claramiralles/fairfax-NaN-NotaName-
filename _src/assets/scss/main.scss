@@ -1,6 +1,8 @@
 
+@import 'core/variables';
 @import 'core/settings';
 @import 'core/mixins';
+<<<<<<< HEAD
 @import 'core/variables';
 
 @import 'layout/base';
@@ -9,20 +11,25 @@
 @import 'layout/footer';
 
 @import 'components/buttons';
+=======
+>>>>>>> origin/form-design
 
 
 
 //components
 @import 'components/buttons';
+@import 'components/theme-colors';
 
 
 //Pages
 
-
-
 @import 'pages/main-page';
+@import 'pages/form';
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/form-design
 
 
