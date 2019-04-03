@@ -8,4 +8,19 @@
     font-size: 12px;
     line-height: 20px;
     margin-bottom: 20px;
+    color: $color-greyText;
+}
+
+.button__start{
+    display: inline-block;
+    width: 129px;
+    height: 42px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: $color-green400;
+    border-radius: 21px;
+    color: $color-white100;
+    text-decoration: none;
 }
