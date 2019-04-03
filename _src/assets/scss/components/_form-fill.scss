@@ -1,0 +1,22 @@
+.fielset__fill-container{
+    font-family: $font-primary;
+    font-size:0.875rem;
+    color: $color-green700;
+    display:flex;
+    flex-direction: column;
+}
+
+.title-label {
+    margin-bottom:6px;
+    margin-top:20px;
+}
+
+.title-label:first-child {
+    margin-top:25px;
+}
+
+.input-box {
+    border: 1px solid $color-green100;
+    padding: 4px;
+    color: $color-greyFooter;
+}

@@ -1,0 +1,36 @@
+.form__fieldset{ 
+    padding-top: 27px;
+    border:0;
+    border-bottom: 1px solid $color-greySeparator;
+    max-width: 320px;
+    margin: 0 auto;
+
+}
+
+
+.fieldset__title{
+    display:flex;
+    align-items: center;
+}
+
+.form__icons{
+    color: $color-orangeIcons;
+    display:inline-block;
+}
+
+.form__arrow-icons{
+    color: $color-greyText;
+    align-self: flex-end;
+    align-items: center; 
+    height: 18px;
+}
+
+.fieldset__title-text{
+    color: $color-greyText;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-weight: 600;
+    flex-grow:1;
+    padding-left:10px;
+}
+
