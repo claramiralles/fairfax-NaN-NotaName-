@@ -2,7 +2,7 @@
 
 console.log('>> Ready :)');
 
-const formGithub = document.getElementById('github');
+const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
 function writeGithub(event){
@@ -12,4 +12,4 @@ function writeGithub(event){
     previewGithub.href = textGithub.value;
 }
 
-formGithub.addEventListener('keyup', writeGithub);
+inputGithub.addEventListener('keyup', writeGithub);
