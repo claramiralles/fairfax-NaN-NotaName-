@@ -1,7 +1,7 @@
 'use strict';
 
 //elemento a observar Phone
-const inputPhone = document.querySelector('.phone');
+const inputPhone = document.querySelector('#phone');
 const previewPhone = document.querySelector('.phone__icon');
 
 //handler
@@ -39,7 +39,6 @@ const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
 function writeGithub(event){
-    console.log('Hola');
     const textGithub = event.currentTarget;
 
     previewGithub.href = textGithub.value;
@@ -48,7 +47,7 @@ function writeGithub(event){
 inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
-const inputMail=document.querySelector(".input-mail");
+const inputMail = document.getElementById('email');
 
 function writeMail() {
     const yourEmail=inputMail.value;
@@ -60,4 +59,4 @@ function writeMail() {
         previewMail.href=`mailto:${yourEmail}`;
     }
 }
-inputMail.addEventListener("keyup",writeMail);
+inputMail.addEventListener('keyup',writeMail);
