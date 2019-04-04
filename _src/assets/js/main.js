@@ -1,14 +1,15 @@
 'use strict';
 
-//elemento a observar
-const inputEl = document.querySelector('.input-box');
-const placeName = document.querySelector('.name');
+//elemento a observar tel 
+const inputTel = document.querySelector('.phone');
+const placePhone = document.querySelector('.phone__icon');
 
 
 //handler
 function liveWrite(event){
-    placeName.innerHTML = inputEl.value || "Nombre Apellido";
+    //console.log(placePhone.href)
+    placePhone.href = ('tel:' + inputTel.value) || "#";
     }
 
 //listener
-inputEl.addEventListener('keyup', liveWrite);
+inputTel.addEventListener('keyup', liveWrite);
