@@ -89,6 +89,9 @@
 }
 
 .theme--red{
+    // .section__preview {
+    //     background-image: linear-gradient(to bottom,$color-red100, $color-red700);
+    // }
     .card__preview::before{
         background-color: $color-red100;
     }
