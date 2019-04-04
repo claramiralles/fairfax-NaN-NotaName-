@@ -24,3 +24,15 @@
     color: $color-white100;
     text-decoration: none;
 }
+.button__create {
+    margin: 30px auto;
+    width: 199px;
+    height: 50px;
+    background-color: $color-greyCreat;
+    font-family: $font-primary;
+    font-size: 1.125rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px 0 $color-greyFooter;
+    text-transform: uppercase;
+    color: $color-white100;
+}

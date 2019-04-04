@@ -1,5 +1,21 @@
 'use strict';
 
+//elemento a observar Phone
+const inputPhone = document.querySelector('.phone');
+const previewPhone = document.querySelector('.phone__icon');
+
+//handler
+function writePhone(event){
+    if (!inputPhone.value){
+        previewPhone.classList.add('hide');
+    } else {
+        previewPhone.href = ('tel:' + inputPhone.value);
+        previewPhone.classList.remove('hide');
+    }
+}
+
+//listener
+inputPhone.addEventListener('keyup', writePhone);
 //Name and position
 const previewName=document.querySelector('.name');
 const inputName=document.querySelector('#name');
@@ -30,3 +46,18 @@ function writeGithub(event){
 }
 
 inputGithub.addEventListener('keyup', writeGithub);
+
+//Mail
+const inputMail=document.querySelector(".input-mail");
+
+function writeMail() {
+    const yourEmail=inputMail.value;
+    const previewMail=document.querySelector(".buttonMail");    
+    if (!yourEmail){
+        previewMail.classList.add("hide");
+    }else{
+        previewMail.classList.remove("hide");
+        previewMail.href=`mailto:${yourEmail}`;
+    }
+}
+inputMail.addEventListener("keyup",writeMail);
