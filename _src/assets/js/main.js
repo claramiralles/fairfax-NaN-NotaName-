@@ -1,15 +1,15 @@
 'use strict';
 
 //elemento a observar tel 
-const inputTel = document.querySelector('.phone');
-const placePhone = document.querySelector('.phone__icon');
+const inputPhone = document.querySelector('.phone');
+const previewPhone = document.querySelector('.phone__icon');
 
 
 //handler
-function liveWrite(event){
+function writePhone(event){
     //console.log(placePhone.href)
-    placePhone.href = ('tel:' + inputTel.value) || "#";
+    previewPhone.href = ('tel:' + inputPhone.value) || "#";
     }
 
 //listener
-inputTel.addEventListener('keyup', liveWrite);
+inputPhone.addEventListener('keyup', writePhone);
