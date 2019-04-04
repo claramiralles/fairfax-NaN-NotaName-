@@ -1,20 +1,20 @@
 'use strict';
 
-const namePreview=document.querySelector('.name');
-const nameInput=document.querySelector('#name');
-const jobPreview=document.querySelector('.job');
-const jobInput=document.querySelector('#position');
+const previewName=document.querySelector('.name');
+const inputName=document.querySelector('#name');
+const previewJob=document.querySelector('.job');
+const inputJob=document.querySelector('#position');
 
 
 function writeName(event){
-    namePreview.innerHTML=nameInput.value || "Nombre Apellido";
+    previewName.innerHTML=inputName.value || "Nombre Apellido";
 }
-nameInput.addEventListener('keyup', writeName);
+inputName.addEventListener('keyup', writeName);
 
 function writePosition(event){
-    jobPreview.innerHTML=jobInput.value || "Front-end developer";
+    previewJob.innerHTML=inputJob.value || "Front-end developer";
 }
-jobInput.addEventListener('keyup', writePosition);
+inputJob.addEventListener('keyup', writePosition);
 
 
 
