@@ -61,3 +61,33 @@
     color: $color-greyText;
     text-align: center;
 }
+.card__created {
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid $color-greySeparator;
+    @include flexColumnCentered();
+}
+.share__twitter {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 181px;
+    height: 30px;
+    font-family: $font-primary;
+    font-size: 0.875rem;
+    color: $color-white100;
+    background-color: $color-blueTwitter;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 $color-greyText;
+}
+.form__icons-twitter {
+    color: $color-white100;
+    font-size: 1.125rem;
+}
+.card__link {
+    margin-top: 5px;
+    color: $color-orangeIcons;
+    font-size: 0.75rem;
+    font-family: $font-primary;
+    text-decoration: none;
+    font-weight: 600;
+}
