@@ -1,7 +1,7 @@
 'use strict';
 
 //elemento a observar Phone
-const inputPhone = document.querySelector('.phone');
+const inputPhone = document.querySelector('#phone');
 const previewPhone = document.querySelector('.phone__icon');
 
 //handler
@@ -39,7 +39,6 @@ const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
 function writeGithub(event){
-    console.log('Hola');
     const textGithub = event.currentTarget;
 
     previewGithub.href = textGithub.value;
@@ -48,7 +47,7 @@ function writeGithub(event){
 inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
-const inputMail=document.querySelector(".input-mail");
+const inputMail = document.getElementById('email');
 
 function writeMail() {
     const yourEmail=inputMail.value;
@@ -60,6 +59,7 @@ function writeMail() {
         previewMail.href=`mailto:${yourEmail}`;
     }
 }
+<<<<<<< HEAD
 inputMail.addEventListener("keyup",writeMail);
 
 //collapse
@@ -83,3 +83,16 @@ const collapseFillContent = document.querySelector('.wrapper__fill-content');
 // collapseTriggerFill.addEventListener('click', collapse);
 
 
+=======
+inputMail.addEventListener('keyup',writeMail);
+//Linkedin
+const inputLinkedin = document.getElementById('Linkedin');
+const previewLinkedin = document.querySelector('.linkedin');
+
+function writeLinkedin(event){
+    const textLinkedin = event.currentTarget;
+
+    previewLinkedin.href = textLinkedin.value;
+}
+inputLinkedin.addEventListener('keyup', writeLinkedin);
+>>>>>>> a70fb8787404ada8e24ad9a18a59164fc4756010
