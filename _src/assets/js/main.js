@@ -61,3 +61,25 @@ function writeMail() {
     }
 }
 inputMail.addEventListener("keyup",writeMail);
+
+//collapse
+
+const collapseTriggerFill = document.querySelector('.trigger__fill');
+const collapseFill = document.querySelector('.wrapper__fill');
+const collapseFillContent = document.querySelector('.wrapper__fill-content');
+
+
+// function collapse(){
+//     console.log('Frustacion');
+//     if (collapseFill.classList.contains('.open')){
+//         collapseFill.classList.remove('open');
+//         // collapseFill.height(0);
+//     } else{
+//         collapseFill.classList.add('open');
+//         collapseFill.height(collapseFillContent.outerheight(true));
+//     }
+// }
+
+// collapseTriggerFill.addEventListener('click', collapse);
+
+

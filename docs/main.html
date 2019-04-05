@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600"
+        rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <title>Awesome profile cards</title>
+    </head>
+    
+    <body>
+        <header>
+            <img class="header__image" src="assets/images/awesome_cards_logo.svg"
+            alt="awesome cards logo">
+        </header>
+        <aside class="section__preview">
+            <div>
+                <button class="button__reset"><i class="far fa-trash-alt"></i> Reset</button>
+                <section class="card__preview">
+                    <p class="name">Nombre Apellido</p>
+                    <p class="job">Front-end developer</p>
+                    <img class="card__photo" src="https://via.placeholder.com/240x200"
+                    alt="card photo">
+                    <ul class="social__links">
+                        <li><a class="social__button phone__icon" href="#"><i class="fas fa-mobile-alt"></i></a>
+
+                        </li>
+                        <li><a class="social__button buttonMail" href="#"><i class="far fa-envelope"></i></a>
+
+                        </li>
+                        <li><a class="social__button" href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </li>
+                        <li><a class="social__button github" href="#" target="_blank"><i class="fab fa-github-alt"></i></a>
+
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </aside>
+        <section>
+            <form action="">
+                <fieldset class=form__fieldset>
+                    <div class=fieldset__title> <i class="far fa-object-ungroup form__icons"></i>
+
+                        <legend class=fieldset__title-text>Diseña</legend> <i class="fas fa-chevron-up form__arrow-icons"></i>
+
+                    </div>
+                    <div class="fieldset__theme-container">
+                        <p class="theme__description">Colores</p>
+                        <div class="theme-options__container">
+                            <label class="theme" for="theme-green">
+                                <input id="theme-green" type="radio" value="green" name="theme" class=theme-radio>
+                                <div class="color-box color-green1"></div>
+                                <div class="color-box color-green2"></div>
+                                <div class="color-box color-green3"></div>
+                            </label>
+                            <label class="theme" for="theme-red">
+                                <input id="theme-red" type="radio" value="red" name="theme" class=theme-radio>
+                                <div class="color-box color-red1"></div>
+                                <div class="color-box color-red2"></div>
+                                <div class="color-box color-red3"></div>
+                            </label>
+                            <label class="theme" for="theme-grey">
+                                <input id="theme-grey" type="radio" value="grey" name="theme" class=theme-radio>
+                                <div class="color-box color-grey1"></div>
+                                <div class="color-box color-grey2"></div>
+                                <div class="color-box color-grey3"></div>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form__fieldset">
+                    <div class="fieldset__title trigger__fill"> <i class="far fa-keyboard form__icons"></i>
+
+                        <legend class=fieldset__title-text>Rellena</legend> <i class="fas fa-chevron-up form__arrow-icons"></i>
+
+                    </div>
+                    <div class="fielset__fill-container wrapper__fill open">
+                        <!-- <div class="wrapper__fill-content"> -->
+                        <label for="name" class="title-label">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Ej: Mary Fairfax"
+                        class="input-box">
+                        <label for="position" class="title-label">Puesto</label>
+                        <input type="text" id="position" name="position" placeholder="Ej: Front-end developer"
+                        required class="input-box">
+                        <label for="profile-picture" class="title-label">Foto de perfil</label>
+                        <input type="file" id="profile-picture" name="profile-picture"
+                        value="Añadir imagen" required class="input-box">
+                        <div class="thumbnail"></div>
+                        <label for="email" class="title-label">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Ej: mary-fairfax@gmail.com"
+                        required class="input-box input-mail">
+                        <label for="phone" class="title-label">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Ej: 666-55-44-33"
+                        required class="input-box phone">
+                        <label for="LinkedIn" class="title-label">LinkedIn</label>
+                        <input type="text" id="LinkedIn" name="LinkedIn" placeholder="Ej: linkedin.com/in/mary.fairfax"
+                        required>
+                        <label for="Github" class="title-label">Github</label>
+                        <input type="url" id="github" name="Github" placeholder="Ej: https://github.com/mary-fairfax"
+                        required>
+                        <!-- </div> -->
+                    </div>
+                </fieldset>
+                <fieldset class=form__fieldset>
+                    <div class=fieldset__title> <i class="fas fa-share-alt form__icons"></i>
+
+                        <legend class=fieldset__title-text>Comparte</legend> <i class="fas fa-chevron-up form__arrow-icons"></i>
+
+                    </div>
+                    <div class="form__share">
+                        <button class="button__create"> <i class="far fa-address-card form__card-icon"></i>
+Crear tarjeta</button>
+                        <div
+                        class="card__created">
+                             <h2 class="form__share-subtitle">La tarjeta ha sido creada:</h2>
+ <a href="#" class="card__link">Lorem ipsum</a>
+
+                            <button class="share__twitter"><i class="fab fa-twitter form__icons-twitter"></i> Compartir en twitter</button>
+                    </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+    </body>
+
+</html>
