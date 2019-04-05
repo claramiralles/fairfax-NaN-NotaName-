@@ -59,32 +59,8 @@ function writeMail() {
         previewMail.href=`mailto:${yourEmail}`;
     }
 }
-<<<<<<< HEAD
 inputMail.addEventListener("keyup",writeMail);
 
-//collapse
-
-const collapseTriggerFill = document.querySelector('.trigger__fill');
-const collapseFill = document.querySelector('.wrapper__fill');
-const collapseFillContent = document.querySelector('.wrapper__fill-content');
-
-
-// function collapse(){
-//     console.log('Frustacion');
-//     if (collapseFill.classList.contains('.open')){
-//         collapseFill.classList.remove('open');
-//         // collapseFill.height(0);
-//     } else{
-//         collapseFill.classList.add('open');
-//         collapseFill.height(collapseFillContent.outerheight(true));
-//     }
-// }
-
-// collapseTriggerFill.addEventListener('click', collapse);
-
-
-=======
-inputMail.addEventListener('keyup',writeMail);
 //Linkedin
 const inputLinkedin = document.getElementById('Linkedin');
 const previewLinkedin = document.querySelector('.linkedin');
@@ -95,4 +71,3 @@ function writeLinkedin(event){
     previewLinkedin.href = textLinkedin.value;
 }
 inputLinkedin.addEventListener('keyup', writeLinkedin);
->>>>>>> a70fb8787404ada8e24ad9a18a59164fc4756010
