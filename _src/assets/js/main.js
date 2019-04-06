@@ -38,12 +38,20 @@ inputJob.addEventListener('keyup', writePosition);
 const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
-function writeGithub(event){
-    const textGithub = event.currentTarget;
+// function writeGithub(event){
+//     const textGithub = event.currentTarget;
+//     previewGithub.href = textGithub.value;
+// }
 
-    previewGithub.href = textGithub.value;
+function writeGithub(){
+     const yourGithub = inputGithub.value;
+     if(!yourGithub){
+         previewGithub.classList.add('hide');
+     } else{
+        previewGithub.classList.remove('hide');
+        previewGithub.href = yourGithub;
+     }
 }
-
 inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
