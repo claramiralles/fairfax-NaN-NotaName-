@@ -72,13 +72,31 @@ const themeGreyEl= document.getElementById('theme-grey');
 
  function changeTheme(event){
 
-      if (themeRedEl= event.currentTarget=true){
-         cardContainerEl.classList.add('theme--red');
-      }
-      else if (themeGreyEl.checked=true){
-          cardContainerEl.classList.add('theme--grey');
-      }
-  }
+const red=document.querySelector('input[value=red]');
+const grey=document.querySelector('input[value=grey]');
+    if (red.checked){
+       cardContainerEl.classList.add('theme--red');
+       cardContainerEl.classList.remove('theme--grey');
+    }
+    else if (grey.checked){
+    cardContainerEl.classList.add('theme--grey');
+    cardContainerEl.classList.remove('theme--red');
+    }
+    else{
+    cardContainerEl.classList.remove('theme--grey', 'theme--red');
+    }
+}
+
+
+
+
+//       if (themeRedEl= event.checked=true){
+//          cardContainerEl.classList.add('theme--red');
+//       }
+//       else if (themeGreyEl.checked=true){
+//           cardContainerEl.classList.add('theme--grey');
+//       }
+//   }
 
 // // function hanlerThemeSelection(event){
 
@@ -87,7 +105,3 @@ const themeGreyEl= document.getElementById('theme-grey');
 themeGreenEl.addEventListener('click', changeTheme);
 themeRedEl.addEventListener('click', changeTheme);
 themeGreyEl.addEventListener('click', changeTheme);
-
-
-
-
