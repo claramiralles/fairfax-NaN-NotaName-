@@ -74,4 +74,41 @@
 .hide {
     display: none;
 }
+.theme--green{
+    .name{
+        color: $color-green700;
+    }
+    .social__button {
+        border: solid 2px $color-green100;
+        color: $color-green700;
+    }
+}
+.theme--red{
+     &::before {
+         background-color: $color-red100;
+     }
+    .name{
+        color: $color-red700;
+    }
+    .social__button {
+        border: solid 2px $color-red100;
+        color: $color-red700;
+    }
+}
+.theme--grey{
+    &::before {
+        background-color: $color-grey100;
+    }
+    .card__preview::before{
+        background-color: $color-grey100;
+    }
+    .name{
+        color: $color-grey700;
+    }
+    .social__button {
+        border: solid 2px $color-grey100;
+        color: $color-grey700;
+    }
+}
+
 
