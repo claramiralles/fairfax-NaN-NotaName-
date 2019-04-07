@@ -68,40 +68,20 @@ const themeGreenEl= document.getElementById('theme-green');
 const themeRedEl= document.getElementById('theme-red');
 const themeGreyEl= document.getElementById('theme-grey');
 
-
-
- function changeTheme(event){
-
-const red=document.querySelector('input[value=red]');
-const grey=document.querySelector('input[value=grey]');
-    if (red.checked){
-       cardContainerEl.classList.add('theme--red');
-       cardContainerEl.classList.remove('theme--grey');
+function handlerChangeTheme(event){
+    if (themeRedEl.checked){
+        cardContainerEl.classList.add('theme--red');
+        cardContainerEl.classList.remove('theme--grey');
     }
-    else if (grey.checked){
+    else if (themeGreyEl.checked){
     cardContainerEl.classList.add('theme--grey');
     cardContainerEl.classList.remove('theme--red');
     }
     else{
     cardContainerEl.classList.remove('theme--grey', 'theme--red');
     }
-}
+   }
 
-
-
-
-//       if (themeRedEl= event.checked=true){
-//          cardContainerEl.classList.add('theme--red');
-//       }
-//       else if (themeGreyEl.checked=true){
-//           cardContainerEl.classList.add('theme--grey');
-//       }
-//   }
-
-// // function hanlerThemeSelection(event){
-
-// // }
-
-themeGreenEl.addEventListener('click', changeTheme);
-themeRedEl.addEventListener('click', changeTheme);
-themeGreyEl.addEventListener('click', changeTheme);
+themeGreenEl.addEventListener('click', handlerChangeTheme);
+themeRedEl.addEventListener('click', handlerChangeTheme);
+themeGreyEl.addEventListener('click', handlerChangeTheme);
