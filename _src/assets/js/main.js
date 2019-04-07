@@ -71,15 +71,24 @@ inputMail.addEventListener("keyup",writeMail);
 
 //Linkedin
 const inputLinkedin = document.getElementById('Linkedin');
-const previewLinkedin = document.querySelector('.linkedin');
 
 function writeLinkedin(event){
-    const textLinkedin = event.currentTarget;
 
-    previewLinkedin.href = textLinkedin.value;
+const previewLinkedin = document.querySelector('.linkedin');
+const textLinkedin = event.currentTarget;
+
+if (!inputLinkedin.value){
+    previewLinkedin.classList.add("hide");
+}else{
+    previewLinkedin.classList.remove("hide");
+    previewLinkedin.href=inputLinkedin.value;
 }
+}
+
 inputLinkedin.addEventListener('keyup', writeLinkedin);
 
+<<<<<<< HEAD
+=======
 
 // THEMES
 
@@ -105,3 +114,4 @@ function handlerChangeTheme(event){
 themeGreenEl.addEventListener('click', handlerChangeTheme);
 themeRedEl.addEventListener('click', handlerChangeTheme);
 themeGreyEl.addEventListener('click', handlerChangeTheme);
+>>>>>>> 77dd5b37969e9c0ba2b4fb6098f4c4123a7c96df
