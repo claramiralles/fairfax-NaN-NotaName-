@@ -71,3 +71,11 @@ function writeLinkedin(event){
     previewLinkedin.href = textLinkedin.value;
 }
 inputLinkedin.addEventListener('keyup', writeLinkedin);
+
+
+// if (!inputLinkedin){
+//     previewLinkedin.classList.add("hide");
+// }else{
+//     previewLinkedin.classList.remove("hide");
+//     previewLinkedin.href=`${inputLinkedin}`;
+// }
