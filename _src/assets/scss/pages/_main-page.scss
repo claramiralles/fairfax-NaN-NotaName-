@@ -80,13 +80,17 @@
     display: none;
 }
 
-.main-page__container{
+.main-page{
     background-color: rgba($color-greyBgcLanding, 0.7);
-    
+}
+
+.main-page__container{
 
     @media all and (min-width:768px){
         display: flex;
         padding: 20px 40px;
         justify-content: space-between;
+        max-width: 900px;
+        margin: 0 auto;
     }
 }
