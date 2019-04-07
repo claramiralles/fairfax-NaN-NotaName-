@@ -76,9 +76,6 @@
 }
 
 .theme--green{
-    .card__preview::before{
-        background-color: $color-green100;
-    }
     .name{
         color: $color-green700;
     }
@@ -87,14 +84,10 @@
         color: $color-green700;
     }
 }
-
 .theme--red{
-    // .section__preview {
-    //     background-image: linear-gradient(to bottom,$color-red100, $color-red700);
-    // }
-    .card__preview::before{
-        background-color: $color-red100;
-    }
+     &::before {
+         background-color: $color-red100;
+     }
     .name{
         color: $color-red700;
     }
@@ -104,6 +97,9 @@
     }
 }
 .theme--grey{
+    &::before {
+        background-color: $color-grey100;
+    }
     .card__preview::before{
         background-color: $color-grey100;
     }
