@@ -60,3 +60,34 @@ function writeMail() {
     }
 }
 inputMail.addEventListener('keyup',writeMail);
+
+// THEMES
+
+const cardContainerEl = document.querySelector('.card__preview');
+const themeGreenEl= document.getElementById('theme-green');
+const themeRedEl= document.getElementById('theme-red');
+const themeGreyEl= document.getElementById('theme-grey');
+
+
+
+ function changeTheme(event){
+
+      if (themeRedEl= event.currentTarget=true){
+         cardContainerEl.classList.add('theme--red');
+      }
+      else if (themeGreyEl.checked=true){
+          cardContainerEl.classList.add('theme--grey');
+      }
+  }
+
+// // function hanlerThemeSelection(event){
+
+// // }
+
+themeGreenEl.addEventListener('click', changeTheme);
+themeRedEl.addEventListener('click', changeTheme);
+themeGreyEl.addEventListener('click', changeTheme);
+
+
+
+
