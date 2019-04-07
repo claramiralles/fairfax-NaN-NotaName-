@@ -11,6 +11,11 @@
     align-items: center;
     flex-direction: column;
     padding: 38px 35px 40px 45px;
+
+    @media all and (min-width:768px){
+        order: 1;
+        border-radius: 6px;
+    }
 }
 
 .card__preview {
@@ -112,3 +117,17 @@
 }
 
 
+.main-page{
+    background-color: rgba($color-greyBgcLanding, 0.7);
+}
+
+.main-page__container{
+
+    @media all and (min-width:768px){
+        display: flex;
+        padding: 20px 40px;
+        justify-content: space-between;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
