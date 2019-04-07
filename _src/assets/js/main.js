@@ -38,12 +38,20 @@ inputJob.addEventListener('keyup', writePosition);
 const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
-function writeGithub(event){
-    const textGithub = event.currentTarget;
+// function writeGithub(event){
+//     const textGithub = event.currentTarget;
+//     previewGithub.href = textGithub.value;
+// }
 
-    previewGithub.href = textGithub.value;
+function writeGithub(){
+     const yourGithub = inputGithub.value;
+     if(!yourGithub){
+         previewGithub.classList.add('hide');
+     } else{
+        previewGithub.classList.remove('hide');
+        previewGithub.href = yourGithub;
+     }
 }
-
 inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
@@ -73,9 +81,27 @@ function writeLinkedin(event){
 inputLinkedin.addEventListener('keyup', writeLinkedin);
 
 
-// if (!inputLinkedin){
-//     previewLinkedin.classList.add("hide");
-// }else{
-//     previewLinkedin.classList.remove("hide");
-//     previewLinkedin.href=`${inputLinkedin}`;
-// }
+// THEMES
+
+const cardContainerEl = document.querySelector('.card__preview');
+const themeGreenEl= document.getElementById('theme-green');
+const themeRedEl= document.getElementById('theme-red');
+const themeGreyEl= document.getElementById('theme-grey');
+
+function handlerChangeTheme(event){
+    if (themeRedEl.checked){
+        cardContainerEl.classList.add('theme--red');
+        cardContainerEl.classList.remove('theme--grey');
+    }
+    else if (themeGreyEl.checked){
+    cardContainerEl.classList.add('theme--grey');
+    cardContainerEl.classList.remove('theme--red');
+    }
+    else{
+    cardContainerEl.classList.remove('theme--grey', 'theme--red');
+    }
+   }
+
+themeGreenEl.addEventListener('click', handlerChangeTheme);
+themeRedEl.addEventListener('click', handlerChangeTheme);
+themeGreyEl.addEventListener('click', handlerChangeTheme);
