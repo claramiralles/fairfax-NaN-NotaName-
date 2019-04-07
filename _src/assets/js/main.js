@@ -38,12 +38,20 @@ inputJob.addEventListener('keyup', writePosition);
 const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
-function writeGithub(event){
-    const textGithub = event.currentTarget;
+// function writeGithub(event){
+//     const textGithub = event.currentTarget;
+//     previewGithub.href = textGithub.value;
+// }
 
-    previewGithub.href = textGithub.value;
+function writeGithub(){
+     const yourGithub = inputGithub.value;
+     if(!yourGithub){
+         previewGithub.classList.add('hide');
+     } else{
+        previewGithub.classList.remove('hide');
+        previewGithub.href = yourGithub;
+     }
 }
-
 inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
@@ -63,11 +71,19 @@ inputMail.addEventListener("keyup",writeMail);
 
 //Linkedin
 const inputLinkedin = document.getElementById('Linkedin');
-const previewLinkedin = document.querySelector('.linkedin');
 
 function writeLinkedin(event){
-    const textLinkedin = event.currentTarget;
 
-    previewLinkedin.href = textLinkedin.value;
+const previewLinkedin = document.querySelector('.linkedin');
+const textLinkedin = event.currentTarget;
+
+if (!inputLinkedin.value){
+    previewLinkedin.classList.add("hide");
+}else{
+    previewLinkedin.classList.remove("hide");
+    previewLinkedin.href=inputLinkedin.value;
 }
+}
+
 inputLinkedin.addEventListener('keyup', writeLinkedin);
+
