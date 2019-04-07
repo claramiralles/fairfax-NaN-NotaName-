@@ -79,3 +79,29 @@ function writeLinkedin(event){
     previewLinkedin.href = textLinkedin.value;
 }
 inputLinkedin.addEventListener('keyup', writeLinkedin);
+
+
+// THEMES
+
+const cardContainerEl = document.querySelector('.card__preview');
+const themeGreenEl= document.getElementById('theme-green');
+const themeRedEl= document.getElementById('theme-red');
+const themeGreyEl= document.getElementById('theme-grey');
+
+function handlerChangeTheme(event){
+    if (themeRedEl.checked){
+        cardContainerEl.classList.add('theme--red');
+        cardContainerEl.classList.remove('theme--grey');
+    }
+    else if (themeGreyEl.checked){
+    cardContainerEl.classList.add('theme--grey');
+    cardContainerEl.classList.remove('theme--red');
+    }
+    else{
+    cardContainerEl.classList.remove('theme--grey', 'theme--red');
+    }
+   }
+
+themeGreenEl.addEventListener('click', handlerChangeTheme);
+themeRedEl.addEventListener('click', handlerChangeTheme);
+themeGreyEl.addEventListener('click', handlerChangeTheme);
