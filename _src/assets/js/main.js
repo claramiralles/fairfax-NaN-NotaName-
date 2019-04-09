@@ -188,6 +188,9 @@ function reset (){
     const previewLinkedin=document.querySelector('.linkedin');//lo mismo que con email
     previewLinkedin.classList.remove('hide');
     previewLinkedin.href="";
-    //THEMES con lo que Elvira haga
+    //THEMES con lo que Annia haga
+    
+
+
 }
 btnResetEl.addEventListener('click', reset);
