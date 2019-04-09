@@ -155,3 +155,43 @@ function openThisTab (event) {
 tabDesign.addEventListener("click",openThisTab);
 tabFill.addEventListener("click",openThisTab);
 tabShare.addEventListener("click",openThisTab);
+
+
+//Flechas
+
+//Declarar variables para cada flecha hacia arriba (la que aparece por defecto en el colapsable cuando esta sin abrir)
+
+const arrowOneEl = document.querySelector(".arrow1");
+const arrowTwoEl = document.querySelector(".arrow2");
+const arrowThreeEl = document.querySelector(".arrow3");
+
+function interchangeArrowsDownAndUp (event) {
+
+    if (tabDesign.classList.contains("hide")) {
+        arrowOneEl.classList.add("fa-chevron-up");
+    } else {
+        arrowTwoEl.classList.add("fa-chevron-down");
+        arrowThreeEl.classList.remove("fa-chevron-up");
+    };
+   
+    if (tabFill.classList.contains("hide")) {
+        arrowTwoEl.classList.add("fa-chevron-down");
+        arrowTwoEl.classList.remove("fa-chevron-up")
+    } else {
+        arrowTwoEl.classList.add("fa-chevron-up");
+        arrowThreeEl.classList.remove("fa-chevron-down");
+    };
+    
+    if (tabShare.classList.contains("hide")) {
+        arrowThreeEl.classList.add("fa-chevron-down");
+        arrowThreeEl.classList.remove("fa-chevron-up");
+    } else {
+    arrowThreeEl.classList.add("fa-chevron-up");
+    arrowThreeEl.classList.remove("fa-chevron-down");
+    };
+};
+
+//Listeners para cada elemento
+tabDesign.addEventListener("click", interchangeArrowsDownAndUp);
+tabFill.addEventListener("click", interchangeArrowsDownAndUp);
+tabShare.addEventListener("click", interchangeArrowsDownAndUp);
