@@ -13,15 +13,14 @@ function writePhone(event){
         previewPhone.classList.remove('hide');
     }
 }
-
 //listener
 inputPhone.addEventListener('keyup', writePhone);
+
 //Name and position
 const previewName=document.querySelector('.name');
 const inputName=document.querySelector('#name');
 const previewJob=document.querySelector('.job');
 const inputJob=document.querySelector('#position');
-
 
 function writeName(event){
     previewName.innerHTML=inputName.value || "Nombre Apellido";
@@ -155,3 +154,40 @@ function openThisTab (event) {
 tabDesign.addEventListener("click",openThisTab);
 tabFill.addEventListener("click",openThisTab);
 tabShare.addEventListener("click",openThisTab);
+
+//****RESET **** */
+
+//me traigo class="button__reset" el botón de reset // y todos los elementos a los que le aplicaré reset. (ya están arriba)
+//poner listener al boton de reset con click
+//declarar función 
+    // cuando haga click en listener todos los elementos deberán volver a su estado original. //tiene que ver con el catcha? Tengo que poner todos en original. 
+    
+const btnResetEl= document.querySelector('.button__reset');
+
+function reset (){
+    //name y job
+    previewName.innerHTML='Nombre Apellido';
+    previewJob.innerHTML= 'Front-end developer';
+    inputName.value="";
+    inputJob.value ="";
+    //phone
+    previewPhone.classList.remove('hide');
+    previewPhone.href="";
+    inputPhone.value="";
+    // Github
+    previewGithub.classList.remove('hide');
+    previewGithub.href="";
+    inputGithub.value="";
+    //Mail
+    inputMail.value="";
+    const previewMail=document.querySelector(".buttonMail");//la tngo que declarar fuera porque si no lo hago se me queda el href  y el oculto.
+    previewMail.classList.remove('hide');
+    previewMail.href="";
+    //Linkedin
+    inputLinkedin.value="";
+    const previewLinkedin=document.querySelector('.linkedin');//lo mismo que con email
+    previewLinkedin.classList.remove('hide');
+    previewLinkedin.href="";
+    //THEMES con lo que Elvira haga
+}
+btnResetEl.addEventListener('click', reset);
