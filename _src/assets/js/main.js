@@ -189,8 +189,5 @@ function reset (){
     previewLinkedin.classList.remove('hide');
     previewLinkedin.href="";
     //THEMES con lo que Annia haga
-    
-
-
 }
 btnResetEl.addEventListener('click', reset);
