@@ -90,7 +90,7 @@ inputLinkedin.addEventListener('keyup', writeLinkedin);
 
 // THEMES
 
-const cardContainerEl = document.querySelector('.card__preview');
+const cardContainerEl = document.querySelector('.section__preview');
 const themeGreenEl= document.getElementById('theme-green');
 const themeRedEl= document.getElementById('theme-red');
 const themeGreyEl= document.getElementById('theme-grey');
