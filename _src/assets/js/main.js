@@ -155,6 +155,18 @@ tabDesign.addEventListener("click",openThisTab);
 tabFill.addEventListener("click",openThisTab);
 tabShare.addEventListener("click",openThisTab);
 
+//elemento html
+const createEl = document.querySelector('.button__create');
+const shareTwitter = document.querySelector('.card__created');
+//handler
+function showTwitterButton(event){
+    shareTwitter.classList.remove('hide');
+    createEl.classList.remove('button__create');
+    createEl.classList.add('button__create--clicked');
+}
+//listener
+createEl.addEventListener('click', showTwitterButton);
+
 //****RESET **** */
 
 //me traigo class="button__reset" el botón de reset // y todos los elementos a los que le aplicaré reset. (ya están arriba)
@@ -194,3 +206,4 @@ function reset (){
     cardContainerEl.classList.add('theme--green');
 }
 btnResetEl.addEventListener('click', reset);
+
