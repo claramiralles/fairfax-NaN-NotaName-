@@ -28,6 +28,21 @@
     margin: 30px auto;
     width: 199px;
     height: 50px;
+    background-color: $color-blueTwitter;
+    font-family: $font-primary;
+    font-size: 1.125rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    color: $color-white100;
+    &:hover {
+        box-shadow: 0 1px 6px 0 $color-blueTwitter;
+    }
+}
+
+.button__create--clicked {
+    margin: 30px auto;
+    width: 199px;
+    height: 50px;
     background-color: $color-greyCreat;
     font-family: $font-primary;
     font-size: 1.125rem;
@@ -35,4 +50,17 @@
     box-shadow: 0 1px 6px 0 $color-greyFooter;
     text-transform: uppercase;
     color: $color-white100;
+}
+
+.share__twitter {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 181px;
+    height: 30px;
+    font-family: $font-primary;
+    font-size: 0.875rem;
+    color: $color-white100;
+    background-color: $color-blueTwitter;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 $color-greyText;
 }
