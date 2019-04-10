@@ -188,6 +188,9 @@ function reset (){
     const previewLinkedin=document.querySelector('.linkedin');//lo mismo que con email
     previewLinkedin.classList.remove('hide');
     previewLinkedin.href="";
-    //THEMES con lo que Annia haga
+    //THEMES 
+    cardContainerEl.classList.remove('theme--grey');
+    cardContainerEl.classList.remove('theme--red');
+    cardContainerEl.classList.add('theme--green');
 }
 btnResetEl.addEventListener('click', reset);
