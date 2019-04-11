@@ -209,15 +209,39 @@ btnResetEl.addEventListener('click', reset);
 
 
 //ARROW
-const arrow = document.querySelector('.arrow1');
-const formCont = document.querySelector('.form__fieldset');
+// const arrow = document.querySelector('.arrow1');
+// const formCont = document.querySelector('.form__fieldset');
 
+
+// // function handlerArrow(){
+// //     if (arrow.classList.contains('arrow1')){
+// //         arrow.classList.toggle('rotate');
+// //     }
+// // }
+
+// formCont.addEventListener('click', handlerArrow);
+
+const arrow= document.querySelectorAll('.arrow__all');
+const formCont= document.querySelectorAll('.form__fieldset');
 
 function handlerArrow(){
-    if (arrow.classList.contains('arrow1')){
-        arrow.classList.toggle('rotate');
+    for (let i=0; i<arrow.length; i++){
+        arrow[i].classList.toggle('rotate');
     }
+    console.log(arrow);
 }
 
-formCont.addEventListener('click', handlerArrow);
+function getCont(){
+    for (let i=0; i<formCont.length; i++){
+        formCont[i].addEventListener('click', handlerArrow);
+    }
+    console.log(formCont);
+}
 
+function selectArrow(){
+    const selectedArrow= event.currentTarget;
+        selectedArrow.classList.toogle('rotate');
+}
+
+handlerArrow();
+getCont();
