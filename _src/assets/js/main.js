@@ -207,3 +207,17 @@ function reset (){
 }
 btnResetEl.addEventListener('click', reset);
 
+
+//ARROW
+const arrow = document.querySelector('.arrow1');
+const formCont = document.querySelector('.form__fieldset');
+
+
+function handlerArrow(){
+    if (arrow.classList.contains('arrow1')){
+        arrow.classList.toggle('rotate');
+    }
+}
+
+formCont.addEventListener('click', handlerArrow);
+
