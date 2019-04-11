@@ -207,3 +207,44 @@ function reset (){
 }
 btnResetEl.addEventListener('click', reset);
 
+/*******************************OBJECT************************* */
+
+//CREAR OBJETO VACIO
+const userCard = {
+}
+//FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
+
+function fillObject(){
+    if(themeGreenEl.checked){
+        userCard.palette = parseInt(themeGreenEl.value);
+    } else if (themeRedEl.checked){
+        userCard.palette = parseInt(themeRedEl.value);
+    } else {
+        userCard.palette = parseInt(themeGreyEl.value);
+    }
+
+    userCard.name = inputName.value;
+    userCard.job = inputJob.value;
+    userCard.phone = inputPhone.value;
+    userCard.email = inputMail.value;
+    userCard.linkedin = inputLinkedin.value;
+    userCard.github = inputGithub.value;
+
+
+
+    console.log(userCard);
+}
+// const themeGreenEl= document.getElementById('theme-green');
+// const themeRedEl= document.getElementById('theme-red');
+// const themeGreyEl= document.getElementById('theme-grey');
+
+
+//ESCUCHADOR 
+createEl.addEventListener('click', fillObject);
+
+
+
+
+
+
+
