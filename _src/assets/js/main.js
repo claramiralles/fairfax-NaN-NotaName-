@@ -207,3 +207,38 @@ function reset (){
 }
 btnResetEl.addEventListener('click', reset);
 
+
+//ARROW
+// const arrow = document.querySelector('.arrow1');
+// const formCont = document.querySelector('.form__fieldset');
+
+
+// // function handlerArrow(){
+// //     if (arrow.classList.contains('arrow1')){
+// //         arrow.classList.toggle('rotate');
+// //     }
+// // }
+
+// formCont.addEventListener('click', handlerArrow);
+
+const arrow= document.querySelectorAll('.arrow__all');
+const formCont= document.querySelectorAll('.form__fieldset');
+
+//Se obtiene la primera flecha con clase arrow__all en el fieldset donde ocurre el evento y se agrega toogle para la clase rotate
+function handlerArrow(event){
+    const arrow = event.currentTarget.querySelector('.arrow__all');
+    arrow.classList.toggle('rotate');
+    
+    console.log(arrow);
+}
+
+//Se agregan los listener a todos los títulos del form desplegable para rotar la flecha
+
+function arrowListener(){
+    for (let i=0; i<formCont.length; i++){
+        formCont[i].addEventListener('click', handlerArrow);
+    }
+    console.log(formCont);
+}
+//Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
+arrowListener();
