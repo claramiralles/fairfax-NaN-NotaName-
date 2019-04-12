@@ -192,5 +192,23 @@ function reset (){
     cardContainerEl.classList.remove('theme--grey');
     cardContainerEl.classList.remove('theme--red');
     cardContainerEl.classList.add('theme--green');
+
+    resetCache();
 }
+
+
 btnResetEl.addEventListener('click', reset);
+
+
+//cache reset button
+const resetCache = () => {
+    localStorage.removeItem('card', inputName.value);
+}
+
+//cache get
+const getCache = () => {
+    localStorage.setItem('card', inputName.value);
+}
+inputName.addEventListener('keyup', getCache);
+
+
