@@ -185,7 +185,7 @@ function interchangeArrowsDownAndUp (event) {
     } else {
         arrowTwoEl.classList.add("fa-chevron-up");
         arrowTwoEl.classList.remove("fa-chevron-down");
-    };
+    }
     
     if (subTab3Share.classList.contains("hide")) {
         arrowThreeEl.classList.add("fa-chevron-down");
@@ -193,12 +193,12 @@ function interchangeArrowsDownAndUp (event) {
     } else {
     arrowThreeEl.classList.add("fa-chevron-up");
     arrowThreeEl.classList.remove("fa-chevron-down");
-    };
-
+    }
+}
 
 //Listeners para cada elemento
 tabDesign.addEventListener("click", interchangeArrowsDownAndUp);
 tabFill.addEventListener("click", interchangeArrowsDownAndUp);
 tabShare.addEventListener("click", interchangeArrowsDownAndUp);
-}
+
 
