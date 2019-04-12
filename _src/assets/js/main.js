@@ -280,6 +280,7 @@ function fillObject(){
     userCard.email = inputMail.value;
     userCard.linkedin = inputLinkedin.value;
     userCard.github = inputGithub.value;
+    userCard.photo = fr.result;
 
 
 
