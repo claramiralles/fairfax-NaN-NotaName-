@@ -12,8 +12,9 @@
             <input type="text" id="position" name="position" placeholder="Ej: Front-end developer" required class="input-box">
 
             <label for="profile-picture" class="title-label">Foto de perfil</label>
-            <input type="file" id="profile-picture" name ="profile-picture" value="Añadir imagen" required>
-            <div class="thumbnail"></div>
+            <input type="file" id="profile-picture" name ="profile-picture" class="js__profile-upload-btn hide" value="Añadir imagen" required>
+            <button class="js__profile-trigger">Añadir imagen</button>
+            <div class="js__profile-preview thumbnail"></div>
 
             <label for="phone" class="title-label">Teléfono</label>
             <input type="tel" id="phone" name="phone" placeholder="Ej: 666-55-44-33" required class="input-box phone">
