@@ -99,39 +99,51 @@
     display: none;
 }
 .theme--green{
-    .name{
-        color: $color-green700;
-    }
-    .social__button {
-        border: solid 2px $color-green100;
-        color: $color-green700;
+    background-color: $color-green100;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+    .card__preview{
+        .name{
+            color: $color-green700;
+        }
+        .social__button {
+            border: solid 2px $color-green100;
+            color: $color-green700;
+        }
     }
 }
 .theme--red{
-     &::before {
-         background-color: $color-red100;
-     }
-    .name{
-        color: $color-red700;
-    }
-    .social__button {
-        border: solid 2px $color-red100;
-        color: $color-red700;
+    background-color: $color-red50;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+    .card__preview{
+        &::before {
+            background-color: $color-red100;
+        }
+        .name{
+            color: $color-red700;
+        }
+        .social__button {
+            border: solid 2px $color-red100;
+            color: $color-red700;
+        }
     }
 }
 .theme--grey{
-    &::before {
-        background-color: $color-grey100;
-    }
-    .card__preview::before{
-        background-color: $color-grey100;
-    }
-    .name{
-        color: $color-grey700;
-    }
-    .social__button {
-        border: solid 2px $color-grey100;
-        color: $color-grey700;
+    background-color: $color-grey100 ;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+    .card__preview{
+        &::before {
+            background-color: $color-grey100;
+        }
+        .card__preview::before{
+            background-color: $color-grey100;
+        }
+        .name{
+            color: $color-grey700;
+        }
+        .social__button {
+            border: solid 2px $color-grey100;
+            color: $color-grey700;
+        }
     }
 }
 
