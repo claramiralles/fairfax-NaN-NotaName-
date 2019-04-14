@@ -100,7 +100,7 @@
 }
 .theme--green{
     background-color: $color-green100;
-    background-image: url('/assets/images/green.jpg');
+    background-image: url('/assets/images/greenopacity1.jpg');
     background-size: cover; 
     .card__preview{
         .name{
@@ -114,7 +114,7 @@
 }
 .theme--red{
     background-color: $color-red50;
-    background-image: url('/assets/images/autumn.jpg');
+    background-image: url('/assets/images/autumnopacity1.jpg');
     background-size: cover; 
     .card__preview{
         &::before {
@@ -131,7 +131,7 @@
 }
 .theme--grey{
     background-color: $color-grey100 ;
-    background-image: url('/assets/images/snow1.jpg');
+    background-image: url('/assets/images/snow1opacity1.jpg');
     background-size: cover; 
     .card__preview{
         &::before {
