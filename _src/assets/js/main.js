@@ -145,15 +145,20 @@ function openThisTab (event) {
   if (isOpen(event)) {
     event.currentTarget.nextElementSibling.classList.add('hide');
   } else {
-    closeAllTabs(event);
-    openCurrentTab(event);
+    closeAllTabs(event||event.keyCode === 13);
+    openCurrentTab(event||event.keyCode === 13);
   }
 }
 
 //Listeners para todos!
 tabDesign.addEventListener('click',openThisTab);
+tabDesign.addEventListener('keyup',openThisTab);
+
 tabFill.addEventListener('click',openThisTab);
+tabFill.addEventListener('keyup',openThisTab);
+
 tabShare.addEventListener('click',openThisTab);
+tabShare.addEventListener('keyup',openThisTab);
 
 //profile picture
 const fr = new FileReader();
