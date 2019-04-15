@@ -89,7 +89,7 @@ inputLinkedin.addEventListener('keyup', writeLinkedin);
 
 // THEMES
 
-const cardContainerEl = document.querySelector('.card__preview');
+const cardContainerEl = document.querySelector('.section__preview');
 const themeGreenEl= document.getElementById('theme-green');
 const themeRedEl= document.getElementById('theme-red');
 const themeGreyEl= document.getElementById('theme-grey');
@@ -277,19 +277,19 @@ const formCont= document.querySelectorAll('.form__fieldset');
 
 //Se obtiene la primera flecha con clase arrow__all en el fieldset donde ocurre el evento y se agrega toogle para la clase rotate
 function handlerArrow(event){
-    const arrow = event.currentTarget.querySelector('.arrow__all');
-    arrow.classList.toggle('rotate');
-    
-    console.log(arrow);
+  const arrow = event.currentTarget.querySelector('.arrow__all');
+  arrow.classList.toggle('rotate');
+
+  console.log(arrow);
 }
 
 //Se agregan los listener a todos los títulos del form desplegable para rotar la flecha
 
 function arrowListener(){
-    for (let i=0; i<formCont.length; i++){
-        formCont[i].addEventListener('click', handlerArrow);
-    }
-    console.log(formCont);
+  for (let i=0; i<formCont.length; i++){
+    formCont[i].addEventListener('click', handlerArrow);
+  }
+  console.log(formCont);
 }
 //Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
 arrowListener();
