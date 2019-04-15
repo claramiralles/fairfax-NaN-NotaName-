@@ -89,7 +89,7 @@ inputLinkedin.addEventListener('keyup', writeLinkedin);
 
 // THEMES
 
-const cardContainerEl = document.querySelector('.section__preview');
+const cardContainerEl = document.querySelector('.card__preview');
 const themeGreenEl= document.getElementById('theme-green');
 const themeRedEl= document.getElementById('theme-red');
 const themeGreyEl= document.getElementById('theme-grey');
@@ -228,6 +228,35 @@ createEl.addEventListener('click', showTwitterButton);
 const btnResetEl= document.querySelector('.button__reset');
 
 function reset (){
+    //name y job
+    previewName.innerHTML='Nombre Apellido';
+    previewJob.innerHTML= 'Front-end developer';
+    inputName.value="";
+    inputJob.value ="";
+    //phone
+    previewPhone.classList.remove('hide');
+    previewPhone.href="";
+    inputPhone.value="";
+    // Github
+    previewGithub.classList.remove('hide');
+    previewGithub.href="";
+    inputGithub.value="";
+    //Mail
+    inputMail.value="";
+    const previewMail=document.querySelector(".buttonMail");//la tngo que declarar fuera porque si no lo hago se me queda el href  y el oculto.
+    previewMail.classList.remove('hide');
+    previewMail.href="";
+    //Linkedin
+    inputLinkedin.value="";
+    const previewLinkedin=document.querySelector('.linkedin');//lo mismo que con email
+    previewLinkedin.classList.remove('hide');
+    previewLinkedin.href="";
+    //THEMES 
+    cardContainerEl.classList.remove('theme--grey');
+    cardContainerEl.classList.remove('theme--red');
+    cardContainerEl.classList.add('theme--green');
+
+    resetCache();
   //name y job
   previewName.innerHTML='Nombre Apellido';
   previewJob.innerHTML= 'Front-end developer';
@@ -256,49 +285,21 @@ function reset (){
   cardContainerEl.classList.remove('theme--red');
   cardContainerEl.classList.add('theme--green');
 }
+
+
 btnResetEl.addEventListener('click', reset);
 
-/*******************************OBJECT************************* */
 
-//CREAR OBJETO VACIO
-const userCard = {
-};
-//FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
-
-function fillObject(){
-    if(themeGreenEl.checked){
-        userCard.palette = parseInt(themeGreenEl.value);
-    } else if (themeRedEl.checked){
-        userCard.palette = parseInt(themeRedEl.value);
-    } else {
-        userCard.palette = parseInt(themeGreyEl.value);
-    }
-
-    userCard.name = inputName.value;
-    userCard.job = inputJob.value;
-    userCard.phone = inputPhone.value;
-    userCard.email = inputMail.value;
-    userCard.linkedin = inputLinkedin.value;
-    userCard.github = inputGithub.value;
-    userCard.photo = fr.result;
-
-
-
-    console.log(userCard);
+//cache reset button
+const resetCache = () => {
+    localStorage.removeItem('card', inputName.value);
 }
-// const themeGreenEl= document.getElementById('theme-green');
-// const themeRedEl= document.getElementById('theme-red');
-// const themeGreyEl= document.getElementById('theme-grey');
 
-
-//ESCUCHADOR 
-createEl.addEventListener('click', fillObject);
-
-
-
-
-
-
+//cache get
+const getCache = () => {
+    localStorage.setItem('card', inputName.value);
+}
+inputName.addEventListener('keyup', getCache);
 
 
 //ARROW
@@ -319,19 +320,19 @@ const formCont= document.querySelectorAll('.form__fieldset');
 
 //Se obtiene la primera flecha con clase arrow__all en el fieldset donde ocurre el evento y se agrega toogle para la clase rotate
 function handlerArrow(event){
-  const arrow = event.currentTarget.querySelector('.arrow__all');
-  arrow.classList.toggle('rotate');
-
-  console.log(arrow);
+    const arrow = event.currentTarget.querySelector('.arrow__all');
+    arrow.classList.toggle('rotate');
+    
+    console.log(arrow);
 }
 
 //Se agregan los listener a todos los títulos del form desplegable para rotar la flecha
 
 function arrowListener(){
-  for (let i=0; i<formCont.length; i++){
-    formCont[i].addEventListener('click', handlerArrow);
-  }
-  console.log(formCont);
+    for (let i=0; i<formCont.length; i++){
+        formCont[i].addEventListener('click', handlerArrow);
+    }
+    console.log(formCont);
 }
 //Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
 arrowListener();
