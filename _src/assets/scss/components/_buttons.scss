@@ -66,3 +66,18 @@
     border-radius: 3px;
     box-shadow: 0 0 4px 0 $color-greyText;
 }
+.button__add-image{
+    width: 140px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    background-color:$color-orangeIcons;
+    color: $color-white100;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 22px;
+}
