@@ -35,6 +35,22 @@
         background-color: $color-green100;
     }
 }
+///FOTO
+.thumbnail{
+    border: 1px $color-green100 solid;
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+}
+.card__photo{
+    height: 200px;
+    width:240px;
+    background-size: cover;
+    
+    
+
+}
+
 
 .name {
     margin-left: 20px;
