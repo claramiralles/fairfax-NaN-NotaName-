@@ -43,13 +43,11 @@ inputJob.addEventListener('keyup', writePosition);
 const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
-// function writeGithub(event){
-//     const textGithub = event.currentTarget;
-//     previewGithub.href = textGithub.value;
-// }
-
-function writeGithub(){
+function writeGithub(event){
+  event.currentTarget;
   const yourGithub = inputGithub.value;
+  userCard.github = inputGithub.value;
+  saveCache();
   if(!yourGithub){
     previewGithub.classList.add('hide');
   } else{
@@ -62,8 +60,11 @@ inputGithub.addEventListener('keyup', writeGithub);
 //Mail
 const inputMail = document.getElementById('email');
 
-function writeMail() {
+function writeMail(event) {
+  event.currentTarget;
   const yourEmail=inputMail.value;
+  userCard.email = inputMail.value;
+  saveCache();
   const previewMail=document.querySelector('.buttonMail');
   if (!yourEmail){
     previewMail.classList.add('hide');
@@ -78,9 +79,10 @@ inputMail.addEventListener('keyup',writeMail);
 const inputLinkedin = document.getElementById('Linkedin');
 
 function writeLinkedin(event){
-
+  event.currentTarget;
   const previewLinkedin = document.querySelector('.linkedin');
-  const textLinkedin = event.currentTarget;
+  userCard.linkedin = inputLinkedin.value;
+  saveCache();
 
   if (!inputLinkedin.value){
     previewLinkedin.classList.add('hide');
