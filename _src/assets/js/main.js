@@ -210,13 +210,13 @@ fileField.addEventListener('change', getImage);
 const createEl = document.querySelector('.button__create');
 const shareTwitter = document.querySelector('.card__created');
 //handler
-function showTwitterButton(event){
+function showTwitterButton(){
   shareTwitter.classList.remove('hide');
   createEl.classList.remove('button__create');
   createEl.classList.add('button__create--clicked');
 }
 //listener
-createEl.addEventListener('click', showTwitterButton);
+//createEl.addEventListener('click', showTwitterButton);
 
 //****RESET **** */
 
@@ -281,38 +281,15 @@ function fillObject(){
     userCard.linkedin = inputLinkedin.value;
     userCard.github = inputGithub.value;
     userCard.photo = fr.result;
-
-
-
     console.log(userCard);
 }
-// const themeGreenEl= document.getElementById('theme-green');
-// const themeRedEl= document.getElementById('theme-red');
-// const themeGreyEl= document.getElementById('theme-grey');
+//
 
 
 //ESCUCHADOR 
-createEl.addEventListener('click', fillObject);
+//createEl.addEventListener('click', fillObject);
 
 
-
-
-
-
-
-
-//ARROW
-// const arrow = document.querySelector('.arrow1');
-// const formCont = document.querySelector('.form__fieldset');
-
-
-// // function handlerArrow(){
-// //     if (arrow.classList.contains('arrow1')){
-// //         arrow.classList.toggle('rotate');
-// //     }
-// // }
-
-// formCont.addEventListener('click', handlerArrow);
 
 const arrow= document.querySelectorAll('.arrow__all');
 const formCont= document.querySelectorAll('.form__fieldset');
@@ -335,3 +312,31 @@ function arrowListener(){
 }
 //Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
 arrowListener();
+
+ const responseURL = document.querySelector('.card__link');
+
+//enviar datos
+function sendRequest(){
+  fillObject();
+  fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+    method: 'POST',
+    body: JSON.stringify(userCard),
+    headers: {
+      'content-type': 'application/json'
+    },
+  })
+    .then(function(resp) { return resp.json(); })
+    .then(function(result) {showTwitterButton(); showURL(result); })
+    .catch(function(error) { console.log(error); });
+}
+
+function showURL(result){
+  if(result.success){
+    responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+  }else{
+    responseURL.innerHTML = 'ERROR:' + result.error;
+  }
+}
+
+  //handler
+createEl.addEventListener('click', sendRequest);
