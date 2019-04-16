@@ -23,12 +23,17 @@ const previewJob=document.querySelector('.job');
 const inputJob=document.querySelector('#position');
 
 function writeName(event){
+  const selectedInput = event.currentTarget;
   previewName.innerHTML=inputName.value || 'Nombre Apellido';
+  userCard.name = inputName.value;
+  saveCache();
 }
 inputName.addEventListener('keyup', writeName);
 
 function writePosition(event){
   previewJob.innerHTML=inputJob.value || 'Front-end developer';
+  previewJob = userCard.job;
+  saveCache();
 }
 inputJob.addEventListener('keyup', writePosition);
 
@@ -294,4 +299,22 @@ function fillObject(){
 //ESCUCHADOR
 createEl.addEventListener('click', fillObject);
 
+/****************Cache */
+//cache save
+function saveCache(){
+  const objectString = JSON.stringify(userCard);
+  localStorage.setItem('card', objectString);
+}
+//   localStorage.getItem('card');
+//   const objectParse = JSON.parse(objectString);
 
+// };
+
+// const form = document.querySelector('.main-form');
+// function saveCache(event){
+//   const actualInput = event.currentTarget;
+//   localStorage.setItem('card', actualInput.value);
+// }
+
+// inputName.addEventListener('keyup', saveCache);
+// inputJob.addEventListener('keyup', saveCache);
