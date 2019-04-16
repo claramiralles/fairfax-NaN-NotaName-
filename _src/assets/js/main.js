@@ -313,7 +313,8 @@ function arrowListener(){
 //Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
 arrowListener();
 
- const responseURL = document.querySelector('.card__link');
+const responseURL = document.querySelector('.card__link');
+const responseText = document.querySelector('.form__share-subtitle');
 
 //enviar datos
 function sendRequest(){
@@ -332,8 +333,12 @@ function sendRequest(){
 
 function showURL(result){
   if(result.success){
+    responseText.innerHTML = 'La tarjeta ha sido creada';
     responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
   }else{
+    responseText.innerHTML = 'Ha habído un error';
+    createEl.classList.remove('button__create--clicked');
+    createEl.classList.add('button__create')
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
 }
