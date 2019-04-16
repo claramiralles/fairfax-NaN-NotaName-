@@ -6,6 +6,9 @@ const previewPhone = document.querySelector('.phone__icon');
 
 //handler
 function writePhone(event){
+  event.currentTarget;
+  userCard.phone = inputPhone.value;
+  saveCache();
   if (!inputPhone.value){
     previewPhone.classList.add('hide');
   } else {
@@ -267,10 +270,19 @@ function reset (){
 btnResetEl.addEventListener('click', reset);
 
 /*******************************OBJECT************************* */
-
+let userCard = getCache();
+if(!userCard){
+  userCard = {
+  };
+}
+// else{
+//   fillForm(userCard);
+// }
+// const userCard = {
+// };
+console.log(userCard);
 //CREAR OBJETO VACIO
-const userCard = {
-};
+
 //FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
 
 function fillObject(){
@@ -294,10 +306,6 @@ function fillObject(){
 
   console.log(userCard);
 }
-// const themeGreenEl= document.getElementById('theme-green');
-// const themeRedEl= document.getElementById('theme-red');
-// const themeGreyEl= document.getElementById('theme-grey');
-
 
 //ESCUCHADOR
 createEl.addEventListener('click', fillObject);
@@ -308,16 +316,12 @@ function saveCache(){
   const objectString = JSON.stringify(userCard);
   localStorage.setItem('card', objectString);
 }
-//   localStorage.getItem('card');
-//   const objectParse = JSON.parse(objectString);
+function getCache(){   
+  const objectString = localStorage.getItem('card');
+  const objectParse = JSON.parse(objectString);
+  console.log(objectParse);
+  return objectParse;
+};
 
-// };
+getCache();
 
-// const form = document.querySelector('.main-form');
-// function saveCache(event){
-//   const actualInput = event.currentTarget;
-//   localStorage.setItem('card', actualInput.value);
-// }
-
-// inputName.addEventListener('keyup', saveCache);
-// inputJob.addEventListener('keyup', saveCache);
