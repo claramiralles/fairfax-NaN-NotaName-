@@ -23,7 +23,7 @@ const previewJob=document.querySelector('.job');
 const inputJob=document.querySelector('#position');
 
 function writeName(event){
-  const selectedInput = event.currentTarget;
+  event.currentTarget;
   previewName.innerHTML=inputName.value || 'Nombre Apellido';
   userCard.name = inputName.value;
   saveCache();
@@ -31,8 +31,9 @@ function writeName(event){
 inputName.addEventListener('keyup', writeName);
 
 function writePosition(event){
+  event.currentTarget;
   previewJob.innerHTML=inputJob.value || 'Front-end developer';
-  previewJob = userCard.job;
+  userCard.job = inputJob.value;
   saveCache();
 }
 inputJob.addEventListener('keyup', writePosition);
