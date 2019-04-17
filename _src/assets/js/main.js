@@ -1,5 +1,16 @@
 'use strict';
 
+const userCard = {
+  name:'',
+  job:'',
+  phone:'',
+  email:'',
+  linkedin:'',
+  github:'',
+  photo:'',
+  palette: 1
+};
+
 //elemento a observar Phone
 const inputPhone = document.querySelector('#phone');
 const previewPhone = document.querySelector('.phone__icon');
@@ -81,8 +92,7 @@ inputMail.addEventListener('keyup',writeMail);
 //Linkedin
 const inputLinkedin = document.getElementById('Linkedin');
 
-function writeLinkedin(event){
-  event.currentTarget;
+function writeLinkedin(){
   const previewLinkedin = document.querySelector('.linkedin');
   userCard.linkedin = inputLinkedin.value;
   saveCache();
@@ -105,18 +115,23 @@ const themeGreenEl= document.getElementById('theme-green');
 const themeRedEl= document.getElementById('theme-red');
 const themeGreyEl= document.getElementById('theme-grey');
 
-function handlerChangeTheme(event){
+function handlerChangeTheme(){
+  
   if (themeRedEl.checked){
+    userCard.palette = parseInt(themeRedEl.value);
     cardContainerEl.classList.add('theme--red');
     cardContainerEl.classList.remove('theme--grey');
   }
   else if (themeGreyEl.checked){
+    userCard.palette = parseInt(themeGreyEl.value);
     cardContainerEl.classList.add('theme--grey');
     cardContainerEl.classList.remove('theme--red');
   }
   else{
+    userCard.palette = parseInt(themeGreenEl.value);
     cardContainerEl.classList.remove('theme--grey', 'theme--red');
   }
+  saveCache();
 }
 
 themeGreenEl.addEventListener('click', handlerChangeTheme);
@@ -270,17 +285,9 @@ function reset (){
 btnResetEl.addEventListener('click', reset);
 
 /*******************************OBJECT************************* */
-let userCard = getCache();
-function reloadPage(){
-  if(!userCard){
-    userCard = {};
-  }else{
-    fillFormCache();
-  }
-}
 
-// const userCard = {
-// };
+
+
 // console.log(userCard);
 //CREAR OBJETO VACIO
 
@@ -325,8 +332,34 @@ function getCache(){
 }
 
 function fillFormCache(){
-  getCache();
   inputName.value = userCard.name;
+  inputJob.value = userCard.job;
+  inputPhone.value = userCard.phone;
+  inputMail.value = userCard.email;
+  inputLinkedin.value = userCard.linkedin;
+  inputGithub.value = userCard.github;
+  fr.result = userCard.photo;
+
 }
 
+// function reloadPage(){
+//   if(!getCache){
+//     userCard;
+//   }else{
+//     getCache();
+//     fillFormCache();
+// //   }
+// }
 reloadPage();
+
+
+
+function reloadPage(){
+  getCache();
+  if(!userCard){
+    userCard;
+  }else{
+    fillFormCache();
+  }
+}
+
