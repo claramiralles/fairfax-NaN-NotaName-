@@ -279,9 +279,6 @@ function reloadPage(){
   }
 }
 
-// else{
-//   fillForm(userCard);
-// }
 // const userCard = {
 // };
 // console.log(userCard);
@@ -330,12 +327,6 @@ function getCache(){
 function fillFormCache(){
   getCache();
   inputName.value = userCard.name;
-  inputJob.value = userCard.job;
-  inputPhone.value = userCard.phone;
-  inputMail.value = userCard.email;
-  inputLinkedin.value = userCard.linkedin;
-  inputGithub.value = userCard.github;
-  fr.result = userCard.photo;
 }
 
 reloadPage();
