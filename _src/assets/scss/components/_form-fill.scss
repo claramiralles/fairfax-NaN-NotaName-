@@ -26,3 +26,9 @@
 .input__file{
     border:0;
 }
+.js__profile-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    margin-top: 5px;
+}

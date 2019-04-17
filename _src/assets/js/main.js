@@ -262,7 +262,7 @@ btnResetEl.addEventListener('click', reset);
 
 //CREAR OBJETO VACIO
 const userCard = {
-}
+};
 //FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
 
 function fillObject(){
