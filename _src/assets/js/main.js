@@ -271,16 +271,20 @@ btnResetEl.addEventListener('click', reset);
 
 /*******************************OBJECT************************* */
 let userCard = getCache();
-if(!userCard){
-  userCard = {
-  };
+function reloadPage(){
+  if(!userCard){
+    userCard = {};
+  }else{
+    fillFormCache();
+  }
 }
+
 // else{
 //   fillForm(userCard);
 // }
 // const userCard = {
 // };
-console.log(userCard);
+// console.log(userCard);
 //CREAR OBJETO VACIO
 
 //FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
@@ -316,12 +320,22 @@ function saveCache(){
   const objectString = JSON.stringify(userCard);
   localStorage.setItem('card', objectString);
 }
-function getCache(){   
+function getCache(){
   const objectString = localStorage.getItem('card');
   const objectParse = JSON.parse(objectString);
   console.log(objectParse);
   return objectParse;
-};
+}
 
-getCache();
+function fillFormCache(){
+  getCache();
+  inputName.value = userCard.name;
+  inputJob.value = userCard.job;
+  inputPhone.value = userCard.phone;
+  inputMail.value = userCard.email;
+  inputLinkedin.value = userCard.linkedin;
+  inputGithub.value = userCard.github;
+  fr.result = userCard.photo;
+}
 
+reloadPage();
