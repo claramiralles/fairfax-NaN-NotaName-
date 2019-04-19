@@ -1,4 +1,4 @@
-.fielset__fill-container {
+.fieldset__fill-container {
     font-family: $font-primary;
     font-size:0.875rem;
     color: $color-green700;
@@ -25,4 +25,10 @@
 
 .input__file{
     border:0;
+}
+.js__profile-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    margin-top: 5px;
 }

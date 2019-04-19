@@ -2,9 +2,9 @@
     <div class="fieldset__title trigger__fill">
         <i class="far fa-keyboard form__icons"></i>
         <legend class=fieldset__title-text>Rellena</legend>
-        <i class="fas fa-chevron-down form__arrow-icons arrow2 arrow__all"></i>
+        <i class="form__arrow-icons arrow2 fas fa-chevron-down"></i>
     </div>
-    <div class="fielset__fill-container wrapper__fill hide">
+    <div class="fieldset__fill-container wrapper__fill hide">
             <label for="name" class="title-label">Nombre completo</label>
             <input type="text" id="name" name="name" placeholder="Ej: Mary Fairfax" class="input-box">
 
@@ -13,8 +13,10 @@
 
             <label for="profile-picture" class="title-label">Foto de perfil</label>
             <input type="file" id="profile-picture" name ="photo" class="js__profile-upload-btn hide" value="Añadir imagen" required>
-            <button class="js__profile-trigger">Añadir imagen</button>
+            <div class="js__profile-container">
             <div class="js__profile-preview thumbnail"></div>
+            <button type="button" class="js__profile-trigger button__add-image">Añadir imagen</button>
+            </div>
 
             <label for="phone" class="title-label">Teléfono</label>
             <input type="tel" id="phone" name="phone" placeholder="Ej: 666-55-44-33" required class="input-box phone">
