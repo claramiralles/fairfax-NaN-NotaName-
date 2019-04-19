@@ -1,6 +1,6 @@
 'use strict';
 
-const userCard = {
+let userCard = {
   name:'',
   job:'',
   phone:'',
@@ -331,7 +331,7 @@ function getCache(){
   return objectParse;
 }
 
-function fillFormCache(){
+function fillFormFromUserCard(){
   inputName.value = userCard.name;
   inputJob.value = userCard.job;
   inputPhone.value = userCard.phone;
@@ -340,26 +340,24 @@ function fillFormCache(){
   inputGithub.value = userCard.github;
   fr.result = userCard.photo;
 
+  // if(themeGreenEl.checked){
+  //   themeGreenEl.value = userCard.palette;
+  // } else if (themeRedEl.checked){
+  //   parse(themeRedEl.value) = userCard.palette;
+  // } else {
+  //   themeGreyEl.value = userCard.palette;
+  // }
 }
 
-// function reloadPage(){
-//   if(!getCache){
-//     userCard;
-//   }else{
-//     getCache();
-//     fillFormCache();
-// //   }
-// }
+
 reloadPage();
 
 
 
 function reloadPage(){
-  getCache();
-  if(!userCard){
-    userCard;
-  }else{
-    fillFormCache();
+  const userCardFromCache = getCache();
+  if(userCardFromCache){
+    userCard = userCardFromCache;
+    fillFormFromUserCard();
   }
 }
-
