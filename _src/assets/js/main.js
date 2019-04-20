@@ -339,13 +339,13 @@ function fillFormFromUserCard() {
   inputGithub.value = userCard.github;
   profilePreview.style.backgroundImage = `url(${userCard.photo})`;
 
-  // if(themeGreenEl.checked){
-  //   themeGreenEl.value = userCard.palette;
-  // } else if (themeRedEl.checked){
-  //   parse(themeRedEl.value) = userCard.palette;
-  // } else {
-  //   themeGreyEl.value = userCard.palette;
-  // }
+  if(themeGreenEl.value === userCard.pallete){
+    themeGreenEl.checked = true;
+  } else if (themeRedEl.value === userCard.pallete){
+    themeRedEl.checked = true;
+  } else {
+    themeGreyEl.checked = true;
+  }
 }
 
 reloadPage();
