@@ -240,15 +240,6 @@ function showTwitterButton(){
 
 //****RESET **** */
 
-//cache get
-// const getCache = () => {
-//   localStorage.setItem('card', fillObject());
-// };
-
-const resetCache = () => {
-  localStorage.removeItem('card', inputName.value);
-};
-
 inputName.addEventListener('keyup', getCache);
 //me traigo class='button__reset' el botón de reset // y todos los elementos a los que le aplicaré reset. (ya están arriba)
 //poner listener al boton de reset con click
@@ -323,7 +314,11 @@ function fillObject() {
 //createEl.addEventListener('click', fillObject);
 
 /****************Cache */
-//cache save
+
+function resetCache(){
+  localStorage.removeItem('card');
+}
+
 function saveCache() {
   const objectString = JSON.stringify(userCard);
   localStorage.setItem('card', objectString);
