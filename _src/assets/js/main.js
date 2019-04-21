@@ -211,6 +211,7 @@ function writeImage() {
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
   userCard.photo = fr.result;
+  saveCache();
   console.log(userCard);
 }
 
@@ -279,6 +280,9 @@ function reset() {
   cardContainerEl.classList.remove('theme--grey');
   cardContainerEl.classList.remove('theme--red');
   cardContainerEl.classList.add('theme--green');
+  //default img
+  profileImage.style.backgroundImage = "url('../../assets/images/default-avatar.png')";
+  profilePreview.style.backgroundImage = "url('#')";
 
   resetCache();
 }
@@ -341,6 +345,8 @@ function fillFormFromUserCard() {
   inputLinkedin.value = userCard.linkedin;
   inputGithub.value = userCard.github;
   profilePreview.style.backgroundImage = `url(${userCard.photo})`;
+  profileImage.style.backgroundImage = `url(${userCard.photo})`;
+
   
   if(parseInt(themeGreenEl.value) === userCard.palette){ 
     themeGreenEl.checked = true;
