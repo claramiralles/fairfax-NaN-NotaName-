@@ -278,7 +278,7 @@ function reset() {
   cardContainerEl.classList.remove('theme--red');
   cardContainerEl.classList.add('theme--green');
   //default img
-  profileImage.style.backgroundImage = "url('/assets/images/default-avatar.jpg')";
+  profileImage.classList.add('card__photo--refresh');
   profilePreview.style.backgroundImage = "url('#')";
 
   resetCache();
