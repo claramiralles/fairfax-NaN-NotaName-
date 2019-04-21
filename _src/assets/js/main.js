@@ -1,5 +1,4 @@
-"use strict";
-
+'use strict';
 
 let userCard = {
   name: '',
@@ -13,8 +12,8 @@ let userCard = {
 };
 
 //elemento a observar Phone
-const inputPhone = document.querySelector("#phone");
-const previewPhone = document.querySelector(".phone__icon");
+const inputPhone = document.querySelector('#phone');
+const previewPhone = document.querySelector('.phone__icon');
 
 //handler
 function writePhone(event) {
@@ -29,7 +28,7 @@ function writePhone(event) {
   }
 }
 //listener
-inputPhone.addEventListener("keyup", writePhone);
+inputPhone.addEventListener('keyup', writePhone);
 
 //Name and position
 const previewName = document.querySelector('.name');
@@ -43,7 +42,7 @@ function writeName(event) {
   userCard.name = inputName.value;
   saveCache();
 }
-inputName.addEventListener("keyup", writeName);
+inputName.addEventListener('keyup', writeName);
 
 function writePosition(event) {
   event.currentTarget;
@@ -54,8 +53,8 @@ function writePosition(event) {
 inputJob.addEventListener('keyup', writePosition);
 
 //Github
-const inputGithub = document.getElementById("github");
-const previewGithub = document.querySelector(".github");
+const inputGithub = document.getElementById('github');
+const previewGithub = document.querySelector('.github');
 
 function writeGithub(event) {
   event.currentTarget;
@@ -69,7 +68,7 @@ function writeGithub(event) {
     previewGithub.href = yourGithub;
   }
 }
-inputGithub.addEventListener("keyup", writeGithub);
+inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
 const inputMail = document.getElementById('email');
@@ -91,7 +90,7 @@ function writeMail(event) {
 inputMail.addEventListener('keyup', writeMail);
 
 //Linkedin
-const inputLinkedin = document.getElementById("Linkedin");
+const inputLinkedin = document.getElementById('Linkedin');
 
 function writeLinkedin() {
   const previewLinkedin = document.querySelector('.linkedin');
@@ -131,15 +130,15 @@ function handlerChangeTheme() {
   saveCache();
 }
 
-themeGreenEl.addEventListener("click", handlerChangeTheme);
-themeRedEl.addEventListener("click", handlerChangeTheme);
-themeGreyEl.addEventListener("click", handlerChangeTheme);
+themeGreenEl.addEventListener('click', handlerChangeTheme);
+themeRedEl.addEventListener('click', handlerChangeTheme);
+themeGreyEl.addEventListener('click', handlerChangeTheme);
 
 //COLLAPIBLE FORM
 //Declarar variables para cada parte clickable del formulario.
-const tabDesign = document.querySelector(".trigger__design");
-const tabFill = document.querySelector(".trigger__fill");
-const tabShare = document.querySelector(".trigger__share");
+const tabDesign = document.querySelector('.trigger__design');
+const tabFill = document.querySelector('.trigger__fill');
+const tabShare = document.querySelector('.trigger__share');
 
 //función para cerrar todos los trozos de formulario.
 //cojo la parte clickable, .nexElementSibling selecciona el siguiente hermano (el <div> de abajo que contiene todo el contenido). y lo escondo añadiendo la clase 'hide' que hace 'display: none' para que no quede el hueco en blanco.
@@ -166,7 +165,7 @@ function isOpen() {
 
 function openThisTab(event) {
   if (isOpen(event)) {
-    event.currentTarget.nextElementSibling.classList.add("hide");
+    event.currentTarget.nextElementSibling.classList.add('hide');
   } else {
     closeAllTabs(event);
     openCurrentTab(event);
@@ -185,7 +184,6 @@ const fileField = document.querySelector('.js__profile-upload-btn');
 const profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
-
 /**
  * Recoge el archivo añadido al campo de tipo 'file'
  * y lo carga en nuestro objeto FileReader para que
@@ -196,7 +194,7 @@ const profilePreview = document.querySelector('.js__profile-preview');
  */
 function getImage(e) {
   var myFile = e.currentTarget.files[0];
-  fr.addEventListener("load", writeImage);
+  fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
 
@@ -228,13 +226,13 @@ function fakeFileClick() {
  * - al botón visible para generar el click automático
  * - al campo oculto para cuando cambie su value
  */
-uploadBtn.addEventListener("click", fakeFileClick);
-fileField.addEventListener("change", getImage);
+uploadBtn.addEventListener('click', fakeFileClick);
+fileField.addEventListener('change', getImage);
 //elemento html
-const createEl = document.querySelector(".button__create");
-const shareTwitter = document.querySelector(".card__created");
+const createEl = document.querySelector('.button__create');
+const shareTwitter = document.querySelector('.card__created');
 //handler
-function showTwitterButton(){
+function showTwitterButton() {
   shareTwitter.classList.remove('hide');
   createEl.classList.remove('button__create');
   createEl.classList.add('button__create--clicked');
@@ -281,19 +279,19 @@ function reset() {
   cardContainerEl.classList.remove('theme--red');
   cardContainerEl.classList.add('theme--green');
   //default img
-  profileImage.style.backgroundImage = "url('../images/default-avatar.jpg')";
+  profileImage.style.backgroundImage = "url('/assets/images/default-avatar.jpg')";
   profilePreview.style.backgroundImage = "url('#')";
 
   resetCache();
 }
-btnResetEl.addEventListener("click", reset);
+btnResetEl.addEventListener('click', reset);
 
 /*******************************OBJECT************************* */
 
 // console.log(userCard);
 //CREAR OBJETO VACIO
 
-//ESCUCHADOR 
+//ESCUCHADOR
 //createEl.addEventListener('click', fillObject);
 //FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
 
@@ -322,7 +320,7 @@ function fillObject() {
 
 /****************Cache */
 
-function resetCache(){
+function resetCache() {
   localStorage.removeItem('card');
 }
 
@@ -347,13 +345,17 @@ function fillFormFromUserCard() {
   profilePreview.style.backgroundImage = `url(${userCard.photo})`;
   profileImage.style.backgroundImage = `url(${userCard.photo})`;
 
-  
-  if(parseInt(themeGreenEl.value) === userCard.palette){ 
+  if (parseInt(themeGreenEl.value) === userCard.palette) {
     themeGreenEl.checked = true;
-  } else if (parseInt(themeRedEl.value) === userCard.palette){
+    cardContainerEl.classList.remove('theme--grey', 'theme--red');
+  } else if (parseInt(themeRedEl.value) === userCard.palette) {
     themeRedEl.checked = true;
-  } else if (parseInt(themeGreyEl.value) === userCard.palette){
+    cardContainerEl.classList.add('theme--red');
+    cardContainerEl.classList.remove('theme--grey');
+  } else if (parseInt(themeGreyEl.value) === userCard.palette) {
     themeGreyEl.checked = true;
+    cardContainerEl.classList.remove('theme--red');
+    cardContainerEl.classList.add('theme--grey');
   }
 }
 
@@ -411,28 +413,37 @@ const responseText = document.querySelector('.form__share-subtitle');
 const twitterButton = document.querySelector('.share__twitter');
 
 //enviar datos
-function sendRequest(){
+function sendRequest() {
   fillObject();
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
     method: 'POST',
     body: JSON.stringify(userCard),
     headers: {
       'content-type': 'application/json'
-    },
+    }
   })
-    .then(function(resp) { return resp.json(); })
-    .then(function(result) {showTwitterButton(); showURL(result); })
-    .catch(function(error) { console.log(error); });
+    .then(function(resp) {
+      return resp.json();
+    })
+    .then(function(result) {
+      showTwitterButton();
+      showURL(result);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 }
- 
 
-function showURL(result){
-  if(result.success){
+function showURL(result) {
+  if (result.success) {
     responseText.innerHTML = 'La tarjeta ha sido creada';
-    responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
-    twitterButton.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20digital:%20${result.cardURL}`;
+    responseURL.innerHTML =
+      '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    twitterButton.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20digital:%20${
+      result.cardURL
+    }`;
     twitterButton.classList.remove('hide');
-  }else{
+  } else {
     twitterButton.classList.add('hide');
     responseText.innerHTML = 'Ha habído un error';
     createEl.classList.remove('button__create--clicked');
@@ -441,7 +452,7 @@ function showURL(result){
   }
 }
 
-  //handler
+//handler
 createEl.addEventListener('click', sendRequest);
 
 //Listeners para cada elemento
