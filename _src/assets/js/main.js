@@ -86,6 +86,7 @@ function writeMail(event) {
     previewMail.classList.remove('hide');
     previewMail.href = `mailto:${yourEmail}`;
   }
+  console.log(userCard);
 }
 inputMail.addEventListener('keyup', writeMail);
 
@@ -184,6 +185,7 @@ const fileField = document.querySelector('.js__profile-upload-btn');
 const profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
+
 /**
  * Recoge el archivo añadido al campo de tipo 'file'
  * y lo carga en nuestro objeto FileReader para que
@@ -208,6 +210,7 @@ function writeImage() {
    */
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
+  userCard.photo = fr.result;
   console.log(userCard);
 }
 
@@ -299,13 +302,13 @@ function fillObject() {
     userCard.palette = parseInt(themeGreyEl.value);
   }
 
-  userCard.name = inputName.value;
-  userCard.job = inputJob.value;
-  userCard.phone = inputPhone.value;
-  userCard.email = inputMail.value;
-  userCard.linkedin = inputLinkedin.value;
-  userCard.github = inputGithub.value;
-  userCard.photo = fr.result;
+  // userCard.name = inputName.value;
+  // userCard.job = inputJob.value;
+  // userCard.phone = inputPhone.value;
+  // userCard.email = inputMail.value;
+  // userCard.linkedin = inputLinkedin.value;
+  // userCard.github = inputGithub.value;
+  // userCard.photo = `url(${fr.result})`;
 
   console.log(userCard);
 }
