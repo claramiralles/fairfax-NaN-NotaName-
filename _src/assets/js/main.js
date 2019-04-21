@@ -1,5 +1,4 @@
-"use strict";
-
+'use strict';
 
 let userCard = {
   name: '',
@@ -424,12 +423,11 @@ function sendRequest(){
     .then(function(result) {showTwitterButton(); showURL(result); })
     .catch(function(error) { console.log(error); });
 }
- 
 
 function showURL(result){
   if(result.success){
     responseText.innerHTML = 'La tarjeta ha sido creada';
-    responseURL.innerHTML = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    responseURL.innerHTML = '<a href='+result.cardURL+'>'+result.cardURL+'</a>';
     twitterButton.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20digital:%20${result.cardURL}`;
     twitterButton.classList.remove('hide');
   }else{
@@ -440,8 +438,7 @@ function showURL(result){
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
 }
-
-  //handler
+//handler
 createEl.addEventListener('click', sendRequest);
 
 //Listeners para cada elemento
