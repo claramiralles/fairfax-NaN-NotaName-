@@ -72,13 +72,12 @@ inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
 const inputMail = document.getElementById('email');
-
+const previewMail = document.querySelector('.buttonMail');
 function writeMail(event) {
   event.currentTarget;
   const yourEmail = inputMail.value;
   userCard.email = inputMail.value;
   saveCache();
-  const previewMail = document.querySelector('.buttonMail');
   if (!yourEmail) {
     previewMail.classList.add('hide');
   } else {
@@ -91,9 +90,9 @@ inputMail.addEventListener('keyup', writeMail);
 
 //Linkedin
 const inputLinkedin = document.getElementById('Linkedin');
+const previewLinkedin = document.querySelector('.linkedin');
 
 function writeLinkedin() {
-  const previewLinkedin = document.querySelector('.linkedin');
   userCard.linkedin = inputLinkedin.value;
   saveCache();
 
@@ -341,9 +340,13 @@ function fillFormFromUserCard() {
   inputJob.value = userCard.job;
   previewJob.innerHTML = userCard.job;
   inputPhone.value = userCard.phone;
+  previewPhone.href = 'tel:' + userCard.phone;
   inputMail.value = userCard.email;
+  previewMail.href = `mailto:${userCard.email}`;
   inputLinkedin.value = userCard.linkedin;
+  previewLinkedin.href = userCard.linkedin;
   inputGithub.value = userCard.github;
+  previewGithub.href = userCard.github;
   profilePreview.style.backgroundImage = `url(${userCard.photo})`;
   profileImage.style.backgroundImage = `url(${userCard.photo})`;
 
