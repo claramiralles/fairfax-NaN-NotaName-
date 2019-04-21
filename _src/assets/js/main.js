@@ -240,15 +240,6 @@ function showTwitterButton(){
 
 //****RESET **** */
 
-//cache get
-// const getCache = () => {
-//   localStorage.setItem('card', fillObject());
-// };
-
-const resetCache = () => {
-  localStorage.removeItem('card', inputName.value);
-};
-
 inputName.addEventListener('keyup', getCache);
 //me traigo class='button__reset' el botón de reset // y todos los elementos a los que le aplicaré reset. (ya están arriba)
 //poner listener al boton de reset con click
@@ -323,7 +314,11 @@ function fillObject() {
 //createEl.addEventListener('click', fillObject);
 
 /****************Cache */
-//cache save
+
+function resetCache(){
+  localStorage.removeItem('card');
+}
+
 function saveCache() {
   const objectString = JSON.stringify(userCard);
   localStorage.setItem('card', objectString);
@@ -343,14 +338,14 @@ function fillFormFromUserCard() {
   inputLinkedin.value = userCard.linkedin;
   inputGithub.value = userCard.github;
   profilePreview.style.backgroundImage = `url(${userCard.photo})`;
-
-  // if(themeGreenEl.checked){
-  //   themeGreenEl.value = userCard.palette;
-  // } else if (themeRedEl.checked){
-  //   parse(themeRedEl.value) = userCard.palette;
-  // } else {
-  //   themeGreyEl.value = userCard.palette;
-  // }
+  
+  if(parseInt(themeGreenEl.value) === userCard.palette){ 
+    themeGreenEl.checked = true;
+  } else if (parseInt(themeRedEl.value) === userCard.palette){
+    themeRedEl.checked = true;
+  } else if (parseInt(themeGreyEl.value) === userCard.palette){
+    themeGreyEl.checked = true;
+  }
 }
 
 reloadPage();
