@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 
 let userCard = {
@@ -13,8 +13,8 @@ let userCard = {
 };
 
 //elemento a observar Phone
-const inputPhone = document.querySelector("#phone");
-const previewPhone = document.querySelector(".phone__icon");
+const inputPhone = document.querySelector('#phone');
+const previewPhone = document.querySelector('.phone__icon');
 
 //handler
 function writePhone(event) {
@@ -29,7 +29,7 @@ function writePhone(event) {
   }
 }
 //listener
-inputPhone.addEventListener("keyup", writePhone);
+inputPhone.addEventListener('keyup', writePhone);
 
 //Name and position
 const previewName = document.querySelector('.name');
@@ -43,7 +43,7 @@ function writeName(event) {
   userCard.name = inputName.value;
   saveCache();
 }
-inputName.addEventListener("keyup", writeName);
+inputName.addEventListener('keyup', writeName);
 
 function writePosition(event) {
   event.currentTarget;
@@ -54,8 +54,8 @@ function writePosition(event) {
 inputJob.addEventListener('keyup', writePosition);
 
 //Github
-const inputGithub = document.getElementById("github");
-const previewGithub = document.querySelector(".github");
+const inputGithub = document.getElementById('github');
+const previewGithub = document.querySelector('.github');
 
 function writeGithub(event) {
   event.currentTarget;
@@ -69,7 +69,7 @@ function writeGithub(event) {
     previewGithub.href = yourGithub;
   }
 }
-inputGithub.addEventListener("keyup", writeGithub);
+inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
 const inputMail = document.getElementById('email');
@@ -90,7 +90,7 @@ function writeMail(event) {
 inputMail.addEventListener('keyup', writeMail);
 
 //Linkedin
-const inputLinkedin = document.getElementById("Linkedin");
+const inputLinkedin = document.getElementById('Linkedin');
 
 function writeLinkedin() {
   const previewLinkedin = document.querySelector('.linkedin');
@@ -130,15 +130,15 @@ function handlerChangeTheme() {
   saveCache();
 }
 
-themeGreenEl.addEventListener("click", handlerChangeTheme);
-themeRedEl.addEventListener("click", handlerChangeTheme);
-themeGreyEl.addEventListener("click", handlerChangeTheme);
+themeGreenEl.addEventListener('click', handlerChangeTheme);
+themeRedEl.addEventListener('click', handlerChangeTheme);
+themeGreyEl.addEventListener('click', handlerChangeTheme);
 
 //COLLAPIBLE FORM
 //Declarar variables para cada parte clickable del formulario.
-const tabDesign = document.querySelector(".trigger__design");
-const tabFill = document.querySelector(".trigger__fill");
-const tabShare = document.querySelector(".trigger__share");
+const tabDesign = document.querySelector('.trigger__design');
+const tabFill = document.querySelector('.trigger__fill');
+const tabShare = document.querySelector('.trigger__share');
 
 //función para cerrar todos los trozos de formulario.
 //cojo la parte clickable, .nexElementSibling selecciona el siguiente hermano (el <div> de abajo que contiene todo el contenido). y lo escondo añadiendo la clase 'hide' que hace 'display: none' para que no quede el hueco en blanco.
@@ -165,7 +165,7 @@ function isOpen() {
 
 function openThisTab(event) {
   if (isOpen(event)) {
-    event.currentTarget.nextElementSibling.classList.add("hide");
+    event.currentTarget.nextElementSibling.classList.add('hide');
   } else {
     closeAllTabs(event);
     openCurrentTab(event);
@@ -194,7 +194,7 @@ const profilePreview = document.querySelector('.js__profile-preview');
  */
 function getImage(e) {
   var myFile = e.currentTarget.files[0];
-  fr.addEventListener("load", writeImage);
+  fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
 
@@ -224,11 +224,11 @@ function fakeFileClick() {
  * - al botón visible para generar el click automático
  * - al campo oculto para cuando cambie su value
  */
-uploadBtn.addEventListener("click", fakeFileClick);
-fileField.addEventListener("change", getImage);
+uploadBtn.addEventListener('click', fakeFileClick);
+fileField.addEventListener('change', getImage);
 //elemento html
-const createEl = document.querySelector(".button__create");
-const shareTwitter = document.querySelector(".card__created");
+const createEl = document.querySelector('.button__create');
+const shareTwitter = document.querySelector('.card__created');
 //handler
 function showTwitterButton(){
   shareTwitter.classList.remove('hide');
@@ -279,14 +279,14 @@ function reset() {
 
   resetCache();
 }
-btnResetEl.addEventListener("click", reset);
+btnResetEl.addEventListener('click', reset);
 
 /*******************************OBJECT************************* */
 
 // console.log(userCard);
 //CREAR OBJETO VACIO
 
-//ESCUCHADOR 
+//ESCUCHADOR
 //createEl.addEventListener('click', fillObject);
 //FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
 
@@ -313,23 +313,30 @@ function fillObject() {
 //ESCUCHADOR
 //createEl.addEventListener('click', fillObject);
 
-/****************Cache */
+/****************Cache *****************/
 
+//RESET CACHE
 function resetCache(){
   localStorage.removeItem('card');
 }
+//SAVE CACHE
 
+//SAVE IMAGE IN A STRING BASE64
+
+//SAVE CACHE
 function saveCache() {
   const objectString = JSON.stringify(userCard);
   localStorage.setItem('card', objectString);
 }
+
+//GET CACHE
 function getCache() {
   const objectString = localStorage.getItem('card');
   const objectParse = JSON.parse(objectString);
   console.log(objectParse);
   return objectParse;
 }
-
+//FILL FORM WITH CARD SAVE IN CACHE
 function fillFormFromUserCard() {
   inputName.value = userCard.name;
   inputJob.value = userCard.job;
@@ -349,7 +356,7 @@ function fillFormFromUserCard() {
 }
 
 reloadPage();
-
+//WHEN YOU RELOAD THE PAGE IF THERE IS INFO IN CACHE USE THAT IF NOT IT RELOADS THE EMPTY OBJECT
 function reloadPage() {
   const userCardFromCache = getCache();
   if (userCardFromCache) {
@@ -415,7 +422,7 @@ function sendRequest(){
     .then(function(result) {showTwitterButton(); showURL(result); })
     .catch(function(error) { console.log(error); });
 }
- 
+
 
 function showURL(result){
   if(result.success){
@@ -432,7 +439,7 @@ function showURL(result){
   }
 }
 
-  //handler
+//handler
 createEl.addEventListener('click', sendRequest);
 
 //Listeners para cada elemento
