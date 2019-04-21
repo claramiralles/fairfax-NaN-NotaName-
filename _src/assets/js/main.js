@@ -337,7 +337,9 @@ function getCache() {
 
 function fillFormFromUserCard() {
   inputName.value = userCard.name;
+  previewName.innerHTML = userCard.name;
   inputJob.value = userCard.job;
+  previewJob.innerHTML = userCard.job;
   inputPhone.value = userCard.phone;
   inputMail.value = userCard.email;
   inputLinkedin.value = userCard.linkedin;
