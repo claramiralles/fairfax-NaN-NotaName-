@@ -338,12 +338,12 @@ function fillFormFromUserCard() {
   inputLinkedin.value = userCard.linkedin;
   inputGithub.value = userCard.github;
   profilePreview.style.backgroundImage = `url(${userCard.photo})`;
-
-  if(themeGreenEl.value === userCard.pallete){
+  
+  if(parseInt(themeGreenEl.value) === userCard.palette){ 
     themeGreenEl.checked = true;
-  } else if (themeRedEl.value === userCard.pallete){
+  } else if (parseInt(themeRedEl.value) === userCard.palette){
     themeRedEl.checked = true;
-  } else {
+  } else if (parseInt(themeGreyEl.value) === userCard.palette){
     themeGreyEl.checked = true;
   }
 }
