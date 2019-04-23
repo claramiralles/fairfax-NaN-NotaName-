@@ -463,7 +463,6 @@ function showURL(result) {
 
 //handler
 createEl.addEventListener('click', sendRequest);
-
 //Listeners para cada elemento
 tabDesign.addEventListener('click', interchangeArrowsDownAndUp);
 tabFill.addEventListener('click', interchangeArrowsDownAndUp);
