@@ -454,7 +454,7 @@ function showURL(result) {
     twitterButton.classList.remove('hide');
   } else {
     twitterButton.classList.add('hide');
-    responseText.innerHTML = 'Ha habído un error';
+    responseText.innerHTML = 'Ha habido un error';
     createEl.classList.remove('button__create--clicked');
     createEl.classList.add('button__create');
     responseURL.innerHTML = 'ERROR:' + result.error;
