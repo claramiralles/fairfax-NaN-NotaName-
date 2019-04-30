@@ -18,7 +18,20 @@
 	"js": {
 		"src": [
       "_src/assets/js/main.js",
-      "_src/assets/js/object.js"
+      "_src/assets/js/fill-phone.js",
+      "_src/assets/js/fill-name.js",
+      "_src/assets/js/fill-github.js",
+      "_src/assets/js/fill-mail.js",
+      "_src/assets/js/fill-linkedin.js",
+      "_src/assets/js/fill-colors.js",
+      "_src/assets/js/collapsibles.js",
+      "_src/assets/js/profile-picture.js",
+      "_src/assets/js/share-twitter.js",
+      "_src/assets/js/reset.js",
+      "_src/assets/js/fill-object.js",
+      "_src/assets/js/cache.js",
+      "_src/assets/js/arrows.js",
+      "_src/assets/js/send-back.js"
 		],
 		"dest": "public/assets/js/",
     "dist": "docs/assets/js/"
