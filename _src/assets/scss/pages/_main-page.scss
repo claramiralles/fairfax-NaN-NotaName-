@@ -4,6 +4,7 @@
     box-sizing: border-box;
     background-color: transparent;
 }
+
 .section__preview {
     background-image: linear-gradient(to bottom, #bfcdd0, #dde9ed);
     display: flex;
@@ -42,6 +43,7 @@
     width: 30px;
     background-size: cover;
 }
+
 .card__photo{
     height: 200px;
     width:240px;
@@ -52,7 +54,6 @@
 .card__photo--refresh{
     background-image: url('../../assets/images/default-avatar.jpg');
 }
-
 
 .name {
     margin-left: 20px;
@@ -100,6 +101,7 @@
 .hide {
     display: none;
 }
+
 .theme--green{
     background-color: $color-green100;
     background-image: url('../images/greenopacity1.jpg');
@@ -114,6 +116,7 @@
         }
     }
 }
+
 .theme--red{
     background-color: $color-red50;
     background-image: url('../images/autumnopacity1.jpg');
@@ -131,6 +134,7 @@
         }
     }
 }
+
 .theme--grey{
     background-color: $color-grey100 ;
     background-image: url('../images/snow1opacity1.jpg');
@@ -152,13 +156,11 @@
     }
 }
 
-
 .main-page{
     background-color: rgba($color-greyBgcLanding, 0.7);
 }
 
 .main-page__container{
-
     @media all and (min-width:768px){
         display: flex;
         padding: 20px 40px;
