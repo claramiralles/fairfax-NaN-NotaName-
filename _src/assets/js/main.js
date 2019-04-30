@@ -17,16 +17,11 @@ const previewPhone = document.querySelector('.phone__icon');
 
 //handler
 function writePhone(event) {
-  event.currentTarget;
   userCard.phone = inputPhone.value;
   saveCache();
-  if (!inputPhone.value) {
-    previewPhone.classList.add('hide');
-  } else {
-    previewPhone.href = 'tel:' + inputPhone.value;
-    previewPhone.classList.remove('hide');
-  }
+  previewPhone.href = 'tel:' + inputPhone.value;
 }
+
 //listener
 inputPhone.addEventListener('keyup', writePhone);
 
@@ -37,19 +32,19 @@ const previewJob = document.querySelector('.job');
 const inputJob = document.querySelector('#position');
 
 function writeName(event) {
-  event.currentTarget;
   previewName.innerHTML = inputName.value || 'Nombre Apellido';
   userCard.name = inputName.value;
   saveCache();
 }
+
 inputName.addEventListener('keyup', writeName);
 
 function writePosition(event) {
-  event.currentTarget;
   previewJob.innerHTML = inputJob.value || 'Front-end developer';
   userCard.job = inputJob.value;
   saveCache();
 }
+
 inputJob.addEventListener('keyup', writePosition);
 
 //Github
@@ -57,35 +52,25 @@ const inputGithub = document.getElementById('github');
 const previewGithub = document.querySelector('.github');
 
 function writeGithub(event) {
-  event.currentTarget;
   const yourGithub = inputGithub.value;
   userCard.github = inputGithub.value;
   saveCache();
-  if (!yourGithub) {
-    previewGithub.classList.add('hide');
-  } else {
-    previewGithub.classList.remove('hide');
-    previewGithub.href = yourGithub;
-  }
+  previewGithub.href = yourGithub;
 }
+
 inputGithub.addEventListener('keyup', writeGithub);
 
 //Mail
 const inputMail = document.getElementById('email');
 const previewMail = document.querySelector('.buttonMail');
+
 function writeMail(event) {
-  event.currentTarget;
   const yourEmail = inputMail.value;
   userCard.email = inputMail.value;
   saveCache();
-  if (!yourEmail) {
-    previewMail.classList.add('hide');
-  } else {
-    previewMail.classList.remove('hide');
-    previewMail.href = `mailto:${yourEmail}`;
-  }
-  console.log(userCard);
+  previewMail.href = `mailto:${yourEmail}`;
 }
+
 inputMail.addEventListener('keyup', writeMail);
 
 //Linkedin
@@ -95,13 +80,7 @@ const previewLinkedin = document.querySelector('.linkedin');
 function writeLinkedin() {
   userCard.linkedin = inputLinkedin.value;
   saveCache();
-
-  if (!inputLinkedin.value) {
-    previewLinkedin.classList.add('hide');
-  } else {
-    previewLinkedin.classList.remove('hide');
-    previewLinkedin.href = inputLinkedin.value;
-  }
+  previewLinkedin.href = inputLinkedin.value;
 }
 
 inputLinkedin.addEventListener('keyup', writeLinkedin);
@@ -117,13 +96,14 @@ function handlerChangeTheme() {
   if (themeRedEl.checked) {
     userCard.palette = parseInt(themeRedEl.value);
     cardContainerEl.classList.add('theme--red');
-    cardContainerEl.classList.remove('theme--grey');
+    cardContainerEl.classList.remove('theme--grey', 'theme--green');
   } else if (themeGreyEl.checked) {
     userCard.palette = parseInt(themeGreyEl.value);
     cardContainerEl.classList.add('theme--grey');
-    cardContainerEl.classList.remove('theme--red');
+    cardContainerEl.classList.remove('theme--red', 'theme--green');
   } else {
     userCard.palette = parseInt(themeGreenEl.value);
+    cardContainerEl.classList.add('theme--green');
     cardContainerEl.classList.remove('theme--grey', 'theme--red');
   }
   saveCache();
@@ -209,7 +189,6 @@ function writeImage() {
   profilePreview.style.backgroundImage = `url(${fr.result})`;
   userCard.photo = fr.result;
   saveCache();
-  console.log(userCard);
 }
 
 /**
@@ -256,22 +235,18 @@ function reset() {
   inputName.value = '';
   inputJob.value = '';
   //phone
-  previewPhone.classList.remove('hide');
   previewPhone.href = '';
   inputPhone.value = '';
   // Github
-  previewGithub.classList.remove('hide');
   previewGithub.href = '';
   inputGithub.value = '';
   //Mail
   inputMail.value = '';
   const previewMail = document.querySelector('.buttonMail'); //la tngo que declarar fuera porque si no lo hago se me queda el href  y el oculto.
-  previewMail.classList.remove('hide');
   previewMail.href = '';
   //Linkedin
   inputLinkedin.value = '';
   const previewLinkedin = document.querySelector('.linkedin'); //lo mismo que con email
-  previewLinkedin.classList.remove('hide');
   previewLinkedin.href = '';
   //THEMES
   cardContainerEl.classList.remove('theme--grey');
@@ -302,16 +277,6 @@ function fillObject() {
   } else {
     userCard.palette = parseInt(themeGreyEl.value);
   }
-
-  // userCard.name = inputName.value;
-  // userCard.job = inputJob.value;
-  // userCard.phone = inputPhone.value;
-  // userCard.email = inputMail.value;
-  // userCard.linkedin = inputLinkedin.value;
-  // userCard.github = inputGithub.value;
-  // userCard.photo = `url(${fr.result})`;
-
-  console.log(userCard);
 }
 
 //ESCUCHADOR
@@ -327,10 +292,10 @@ function saveCache() {
   const objectString = JSON.stringify(userCard);
   localStorage.setItem('card', objectString);
 }
+
 function getCache() {
   const objectString = localStorage.getItem('card');
   const objectParse = JSON.parse(objectString);
-  console.log(objectParse);
   return objectParse;
 }
 
