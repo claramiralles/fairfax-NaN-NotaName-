@@ -11,21 +11,21 @@ let userCard = {
   palette: 1
 };
 
-//elemento a observar Phone
+//PHONE
+
 const inputPhone = document.querySelector('#phone');
 const previewPhone = document.querySelector('.phone__icon');
 
-//handler
 function writePhone(event) {
   userCard.phone = inputPhone.value;
   saveCache();
   previewPhone.href = 'tel:' + inputPhone.value;
 }
 
-//listener
 inputPhone.addEventListener('keyup', writePhone);
 
-//Name and position
+//NAME AND JOB
+
 const previewName = document.querySelector('.name');
 const inputName = document.querySelector('#name');
 const previewJob = document.querySelector('.job');
@@ -37,8 +37,6 @@ function writeName(event) {
   saveCache();
 }
 
-inputName.addEventListener('keyup', writeName);
-
 function writePosition(event) {
   previewJob.innerHTML = inputJob.value || 'Front-end developer';
   userCard.job = inputJob.value;
@@ -46,6 +44,8 @@ function writePosition(event) {
 }
 
 inputJob.addEventListener('keyup', writePosition);
+inputName.addEventListener('keyup', writeName);
+
 
 //Github
 const inputGithub = document.getElementById('github');
@@ -114,33 +114,24 @@ themeRedEl.addEventListener('click', handlerChangeTheme);
 themeGreyEl.addEventListener('click', handlerChangeTheme);
 
 //COLLAPIBLE FORM
-//Declarar variables para cada parte clickable del formulario.
+
 const tabDesign = document.querySelector('.trigger__design');
 const tabFill = document.querySelector('.trigger__fill');
 const tabShare = document.querySelector('.trigger__share');
 
-//función para cerrar todos los trozos de formulario.
-//cojo la parte clickable, .nexElementSibling selecciona el siguiente hermano (el <div> de abajo que contiene todo el contenido). y lo escondo añadiendo la clase 'hide' que hace 'display: none' para que no quede el hueco en blanco.
 function closeAllTabs() {
   tabDesign.nextElementSibling.classList.add('hide');
   tabFill.nextElementSibling.classList.add('hide');
   tabShare.nextElementSibling.classList.add('hide');
 }
 
-//Función que abre el trozo de formulario en el que se ha hecho click.
-//event.currentTarget para seleccionar donde hemos hecho click, su .nextElementSibling para ir al <div> de abajo con el form, y le quitamos la claes 'hide' para que vuelva a mostrarse.
 function openCurrentTab() {
   event.currentTarget.nextElementSibling.classList.remove('hide');
 }
 
-//He añadido esto para comprobar si donde hemos hecho click está abierto o cerrado y recoja el valor.
 function isOpen() {
   return !event.currentTarget.nextElementSibling.classList.contains('hide');
 }
-
-//Funcion que incluye las otra dos.
-//Si está abierto lo cerramos (he añadido esta parte para poder cerrar todos los trozos a la vez, se me hacía raro no poder hacerlo. Que al hacer click en algo abierto no se cerrara).
-//Si no (está cerrado), cerramos todos y abrimos el que hemos clickado.
 
 function openThisTab(event) {
   if (isOpen(event)) {
@@ -151,7 +142,6 @@ function openThisTab(event) {
   }
 }
 
-//Listeners para todos!
 tabDesign.addEventListener('click', openThisTab);
 tabFill.addEventListener('click', openThisTab);
 tabShare.addEventListener('click', openThisTab);
@@ -163,68 +153,40 @@ const fileField = document.querySelector('.js__profile-upload-btn');
 const profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
-/**
- * Recoge el archivo añadido al campo de tipo 'file'
- * y lo carga en nuestro objeto FileReader para que
- * lo convierta a algo con lo que podamos trabajar.
- * Añade un listener al FR para que ejecute una función
- * al tener los datos listos
- * @param {evento} e
- */
 function getImage(e) {
   var myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
 
-/**
- * Una vez tenemos los datos listos en el FR podemos
- * trabajar con ellos ;)
- */
 function writeImage() {
-  /* En la propiedad `result` de nuestro FR se almacena
-   * el resultado
-   */
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
   userCard.photo = fr.result;
   saveCache();
 }
 
-/**
- * Genera un click automático en nuesto campo de tipo 'file'
- * que está oculto
- */
 function fakeFileClick() {
   fileField.click();
 }
 
-/**
- * Añadimos los listeners necesarios:
- * - al botón visible para generar el click automático
- * - al campo oculto para cuando cambie su value
- */
 uploadBtn.addEventListener('click', fakeFileClick);
 fileField.addEventListener('change', getImage);
-//elemento html
+
+//CREATE CARD
+
 const createEl = document.querySelector('.button__create');
 const shareTwitter = document.querySelector('.card__created');
-//handler
+
 function showTwitterButton() {
   shareTwitter.classList.remove('hide');
   createEl.classList.remove('button__create');
   createEl.classList.add('button__create--clicked');
 }
-//listener
-//createEl.addEventListener('click', showTwitterButton);
 
 //****RESET **** */
 
 inputName.addEventListener('keyup', getCache);
-//me traigo class='button__reset' el botón de reset // y todos los elementos a los que le aplicaré reset. (ya están arriba)
-//poner listener al boton de reset con click
-//declarar función
-// cuando haga click en listener todos los elementos deberán volver a su estado original. //tiene que ver con el catcha? Tengo que poner todos en original.
 
 const btnResetEl = document.querySelector('.button__reset');
 
@@ -242,11 +204,9 @@ function reset() {
   inputGithub.value = '';
   //Mail
   inputMail.value = '';
-  const previewMail = document.querySelector('.buttonMail'); //la tngo que declarar fuera porque si no lo hago se me queda el href  y el oculto.
   previewMail.href = '';
   //Linkedin
   inputLinkedin.value = '';
-  const previewLinkedin = document.querySelector('.linkedin'); //lo mismo que con email
   previewLinkedin.href = '';
   //THEMES
   cardContainerEl.classList.remove('theme--grey');
@@ -262,12 +222,7 @@ btnResetEl.addEventListener('click', reset);
 
 /*******************************OBJECT************************* */
 
-// console.log(userCard);
-//CREAR OBJETO VACIO
-
 //ESCUCHADOR
-//createEl.addEventListener('click', fillObject);
-//FUNCIÓN PARA LLENAR EL OBJETO CON LOS VALORES DE LOS INPUTS
 
 function fillObject() {
   if (themeGreenEl.checked) {
@@ -278,11 +233,6 @@ function fillObject() {
     userCard.palette = parseInt(themeGreyEl.value);
   }
 }
-
-//ESCUCHADOR
-//createEl.addEventListener('click', fillObject);
-
-/****************Cache */
 
 function resetCache() {
   localStorage.removeItem('card');
@@ -312,12 +262,12 @@ function fillFormFromUserCard() {
   previewLinkedin.href = userCard.linkedin;
   inputGithub.value = userCard.github;
   previewGithub.href = userCard.github;
+
   if(!userCard.photo){
     profileImage.classList.add('card__photo--refresh');
-  }else {
-  profilePreview.style.backgroundImage = `url(${userCard.photo})`;
-  };
-  profileImage.style.backgroundImage = `url(${userCard.photo})`;
+  } else {
+    profilePreview.style.backgroundImage = `url(${userCard.photo})`;
+  }
 
   if (parseInt(themeGreenEl.value) === userCard.palette) {
     themeGreenEl.checked = true;
@@ -343,8 +293,6 @@ function reloadPage() {
   }
 }
 //ARROW
-
-//Declarar variables para cada flecha hacia arriba (la que aparece por defecto en el colapsable cuando esta sin abrir)
 
 const arrowOneEl = document.querySelector('.arrow1');
 const subTab1Design = document.querySelector('.fieldset__theme-container');
@@ -379,7 +327,7 @@ function interchangeArrowsDownAndUp(event) {
     arrowThreeEl.classList.remove('fa-chevron-down');
   }
 }
-//Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
+
 interchangeArrowsDownAndUp();
 
 const responseURL = document.querySelector('.card__link');
@@ -426,9 +374,7 @@ function showURL(result) {
   }
 }
 
-//handler
 createEl.addEventListener('click', sendRequest);
-//Listeners para cada elemento
 tabDesign.addEventListener('click', interchangeArrowsDownAndUp);
 tabFill.addEventListener('click', interchangeArrowsDownAndUp);
 tabShare.addEventListener('click', interchangeArrowsDownAndUp);
