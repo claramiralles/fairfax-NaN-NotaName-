@@ -4,7 +4,7 @@ inputName.addEventListener('keyup', getCache);
 
 const btnResetEl = document.querySelector('.button__reset');
 
-function reset() {
+const reset = () => {
   //name y job
   previewName.innerHTML = 'Nombre Apellido';
   previewJob.innerHTML = 'Front-end developer';
@@ -31,6 +31,6 @@ function reset() {
   profilePreview.style.backgroundImage = "url('#')";
 
   resetCache();
-}
+};
 
 btnResetEl.addEventListener('click', reset);

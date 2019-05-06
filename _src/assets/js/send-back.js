@@ -26,8 +26,11 @@ function sendRequest() {
 function showURL(result) {
   if (result.success) {
     responseText.innerHTML = 'La tarjeta ha sido creada';
-    responseURL.innerHTML =
-      '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    const newUrl = document.createElement('a');
+    const newUrlText = document.createTextNode(`${result.cardURL}`);
+    newUrl.setAttribute('href', `${result.cardURL}`);
+    newUrl.appendChild(newUrlText);
+    responseURL.appendChild(newUrl);
     twitterButton.href = `https://twitter.com/intent/tweet?text=Mira%20mi%20nueva%20tarjeta%20digital:%20${
       result.cardURL
     }`;
