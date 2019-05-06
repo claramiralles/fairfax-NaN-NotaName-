@@ -9,33 +9,23 @@ const collapsibleTwoEl = document.querySelector('.fieldset__fill-container');
 const arrowThreeEl = document.querySelector('.arrow3');
 const collapsibleThreeEl = document.querySelector('.fieldset__share-container');
 
-function interchangeArrowsDownAndUp() {
-  if (collapsibleOneEl.classList.contains('hide')) {
-    arrowOneEl.classList.add('fa-chevron-down');
-    arrowOneEl.classList.remove('fa-chevron-up');
+function changeImage(container, image) {
+  if (container.classList.contains('hide')) {
+    image.classList.add('fa-chevron-down');
+    image.classList.remove('fa-chevron-up');
   } else {
-    arrowOneEl.classList.add('fa-chevron-up');
-    arrowOneEl.classList.remove('fa-chevron-down');
-  }
-  if (collapsibleTwoEl.classList.contains('hide')) {
-    arrowTwoEl.classList.add('fa-chevron-down');
-    arrowTwoEl.classList.remove('fa-chevron-up');
-  } else {
-    arrowTwoEl.classList.add('fa-chevron-up');
-    arrowTwoEl.classList.remove('fa-chevron-down');
-  }
-
-  if (collapsibleThreeEl.classList.contains('hide')) {
-    arrowThreeEl.classList.add('fa-chevron-down');
-    arrowThreeEl.classList.remove('fa-chevron-up');
-  } else {
-    arrowThreeEl.classList.add('fa-chevron-up');
-    arrowThreeEl.classList.remove('fa-chevron-down');
+    image.classList.add('fa-chevron-up');
+    image.classList.remove('fa-chevron-down');
   }
 }
 
+function interchangeArrowsDownAndUp() {
+  changeImage(collapsibleOneEl, arrowOneEl);
+  changeImage(collapsibleTwoEl, arrowTwoEl);
+  changeImage(collapsibleThreeEl, arrowThreeEl);
+}
 interchangeArrowsDownAndUp();
 
-const responseURL = document.querySelector('.card__link');
-const responseText = document.querySelector('.form__share-subtitle');
-const twitterButton = document.querySelector('.share__twitter');
+tabDesign.addEventListener('click', interchangeArrowsDownAndUp);
+tabFill.addEventListener('click', interchangeArrowsDownAndUp);
+tabShare.addEventListener('click', interchangeArrowsDownAndUp);

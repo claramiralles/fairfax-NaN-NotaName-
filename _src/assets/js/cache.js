@@ -27,11 +27,9 @@ function fillFormFromUserCard() {
   inputGithub.value = userCard.github;
   previewGithub.href = userCard.github;
 
-  if(!userCard.photo){
-    profileImage.classList.add('card__photo--refresh');
-  } else {
-    profilePreview.style.backgroundImage = `url(${userCard.photo})`;
-  }
+  (!userCard.photo) ? profileImage.classList.add('card__photo--refresh') : profilePreview.style.backgroundImage = `url(${userCard.photo})`;
+  
+  profileImage.style.backgroundImage = `url(${userCard.photo})`;
 
   if (parseInt(themeGreenEl.value) === userCard.palette) {
     themeGreenEl.checked = true;
