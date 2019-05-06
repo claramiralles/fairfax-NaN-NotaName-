@@ -11,11 +11,11 @@ function writeName() {
   saveCache();
 }
 
-function writePosition() {
+function writeJob() {
   previewJob.innerHTML = inputJob.value || 'Front-end developer';
   userCard.job = inputJob.value;
   saveCache();
 }
 
-inputJob.addEventListener('keyup', writePosition);
+inputJob.addEventListener('keyup', writeJob);
 inputName.addEventListener('keyup', writeName);
