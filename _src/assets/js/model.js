@@ -7,4 +7,4 @@ let userCard = {
     github: '',
     photo: '',
     palette: 1
-  };
+};

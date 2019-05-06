@@ -1,7 +1,5 @@
 //ARROW
 
-//Declarar variables para cada flecha hacia arriba (la que aparece por defecto en el colapsable cuando esta sin abrir)
-
 const arrowOneEl = document.querySelector('.arrow1');
 const subTab1Design = document.querySelector('.fieldset__theme-container');
 
@@ -35,10 +33,9 @@ function interchangeArrowsDownAndUp(event) {
     arrowThreeEl.classList.remove('fa-chevron-down');
   }
 }
-//Se ejecuta la función porque es la que tiene los listener y la que llama a handleArrow
+
 interchangeArrowsDownAndUp();
 
-//Listeners para cada elemento
-tabDesign.addEventListener('click', interchangeArrowsDownAndUp);
-tabFill.addEventListener('click', interchangeArrowsDownAndUp);
-tabShare.addEventListener('click', interchangeArrowsDownAndUp);
+const responseURL = document.querySelector('.card__link');
+const responseText = document.querySelector('.form__share-subtitle');
+const twitterButton = document.querySelector('.share__twitter');

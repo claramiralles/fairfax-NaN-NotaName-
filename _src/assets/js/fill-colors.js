@@ -9,13 +9,14 @@ function handlerChangeTheme() {
   if (themeRedEl.checked) {
     userCard.palette = parseInt(themeRedEl.value);
     cardContainerEl.classList.add('theme--red');
-    cardContainerEl.classList.remove('theme--grey');
+    cardContainerEl.classList.remove('theme--grey', 'theme--green');
   } else if (themeGreyEl.checked) {
     userCard.palette = parseInt(themeGreyEl.value);
     cardContainerEl.classList.add('theme--grey');
-    cardContainerEl.classList.remove('theme--red');
+    cardContainerEl.classList.remove('theme--red', 'theme--green');
   } else {
     userCard.palette = parseInt(themeGreenEl.value);
+    cardContainerEl.classList.add('theme--green');
     cardContainerEl.classList.remove('theme--grey', 'theme--red');
   }
   saveCache();

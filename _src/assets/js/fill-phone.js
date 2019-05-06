@@ -1,18 +1,12 @@
-//elemento a observar Phone
+//PHONE
+
 const inputPhone = document.querySelector('#phone');
 const previewPhone = document.querySelector('.phone__icon');
 
-//handler
-function writePhone(event) {
-  event.currentTarget;
+function writePhone() {
   userCard.phone = inputPhone.value;
   saveCache();
-  if (!inputPhone.value) {
-    previewPhone.classList.add('hide');
-  } else {
-    previewPhone.href = 'tel:' + inputPhone.value;
-    previewPhone.classList.remove('hide');
-  }
+  previewPhone.href = 'tel:' + inputPhone.value;
 }
-//listener
+
 inputPhone.addEventListener('keyup', writePhone);
