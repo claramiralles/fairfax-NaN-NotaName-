@@ -3,7 +3,7 @@ const responseText = document.querySelector('.form__share-subtitle');
 const twitterButton = document.querySelector('.share__twitter');
 //enviar datos
 function sendRequest() {
-  fillObject();
+  fillModel();
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
     method: 'POST',
     body: JSON.stringify(userCard),
@@ -35,13 +35,10 @@ function showURL(result) {
   } else {
     twitterButton.classList.add('hide');
     responseText.innerHTML = 'Ha habido un error';
-    createEl.classList.remove('button__create--clicked');
-    createEl.classList.add('button__create');
+    buttonCreateEl.classList.remove('button__create--clicked');
+    buttonCreateEl.classList.add('button__create');
     responseURL.innerHTML = 'ERROR:' + result.error;
   }
 }
 
-createEl.addEventListener('click', sendRequest);
-tabDesign.addEventListener('click', interchangeArrowsDownAndUp);
-tabFill.addEventListener('click', interchangeArrowsDownAndUp);
-tabShare.addEventListener('click', interchangeArrowsDownAndUp);
+buttonCreateEl.addEventListener('click', sendRequest);

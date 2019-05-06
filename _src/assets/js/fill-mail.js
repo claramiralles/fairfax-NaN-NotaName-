@@ -2,7 +2,7 @@
 const inputMail = document.getElementById('email');
 const previewMail = document.querySelector('.buttonMail');
 
-function writeMail() {
+const writeMail = () => {
   const yourEmail = inputMail.value;
   userCard.email = inputMail.value;
   saveCache();
