@@ -1,5 +1,3 @@
-//COLLAPIBLE FORM
-
 const tabDesign = document.querySelector('.trigger__design');
 const tabFill = document.querySelector('.trigger__fill');
 const tabShare = document.querySelector('.trigger__share');

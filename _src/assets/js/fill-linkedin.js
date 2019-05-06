@@ -2,7 +2,7 @@
 const inputLinkedin = document.getElementById('Linkedin');
 const previewLinkedin = document.querySelector('.linkedin');
 
-function writeLinkedin() {
+const writeLinkedin = () => {
   userCard.linkedin = inputLinkedin.value;
   saveCache();
   previewLinkedin.href = inputLinkedin.value;
