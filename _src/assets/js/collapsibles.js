@@ -19,6 +19,7 @@ function isOpen() {
 }
 
 function openThisTab(event) {
+  //interchangeArrowsDownAndUp();
   if (isOpen(event)) {
     event.currentTarget.nextElementSibling.classList.add('hide');
   } else {
