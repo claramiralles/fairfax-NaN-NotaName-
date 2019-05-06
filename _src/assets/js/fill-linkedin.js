@@ -1,0 +1,11 @@
+//Linkedin
+const inputLinkedin = document.getElementById('Linkedin');
+const previewLinkedin = document.querySelector('.linkedin');
+
+function writeLinkedin() {
+  userCard.linkedin = inputLinkedin.value;
+  saveCache();
+  previewLinkedin.href = inputLinkedin.value;
+}
+
+inputLinkedin.addEventListener('keyup', writeLinkedin);
