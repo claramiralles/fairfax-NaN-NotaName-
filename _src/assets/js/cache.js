@@ -8,8 +8,8 @@ function saveCache() {
 }
 
 function getCache() {
-  const objectString = localStorage.getItem('card');
-  const objectParse = JSON.parse(objectString);
+  const objectRecovered = localStorage.getItem('card');
+  const objectParse = JSON.parse(objectRecovered);
   return objectParse;
 }
 

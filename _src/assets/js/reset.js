@@ -32,4 +32,5 @@ function reset() {
 
   resetCache();
 }
+
 btnResetEl.addEventListener('click', reset);

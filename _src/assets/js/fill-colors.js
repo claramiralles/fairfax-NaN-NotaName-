@@ -5,7 +5,7 @@ const themeGreenEl = document.getElementById('theme-green');
 const themeRedEl = document.getElementById('theme-red');
 const themeGreyEl = document.getElementById('theme-grey');
 
-function handlerChangeTheme() {
+function changeTheme() {
   if (themeRedEl.checked) {
     userCard.palette = parseInt(themeRedEl.value);
     cardContainerEl.classList.add('theme--red');
@@ -22,6 +22,6 @@ function handlerChangeTheme() {
   saveCache();
 }
 
-themeGreenEl.addEventListener('click', handlerChangeTheme);
-themeRedEl.addEventListener('click', handlerChangeTheme);
-themeGreyEl.addEventListener('click', handlerChangeTheme);
+themeGreenEl.addEventListener('click', changeTheme);
+themeRedEl.addEventListener('click', changeTheme);
+themeGreyEl.addEventListener('click', changeTheme);

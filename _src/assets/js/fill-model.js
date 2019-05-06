@@ -1,6 +1,6 @@
 //ESCUCHADOR
 
-function fillObject() {
+function fillModel() {
   if (themeGreenEl.checked) {
     userCard.palette = parseInt(themeGreenEl.value);
   } else if (themeRedEl.checked) {
