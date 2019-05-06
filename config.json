@@ -18,6 +18,7 @@
 	"js": {
 		"src": [
       "_src/assets/js/main.js",
+      "_src/assets/js/model.js",
       "_src/assets/js/fill-phone.js",
       "_src/assets/js/fill-name.js",
       "_src/assets/js/fill-github.js",
