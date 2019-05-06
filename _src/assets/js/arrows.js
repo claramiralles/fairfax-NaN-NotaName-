@@ -35,7 +35,3 @@ function interchangeArrowsDownAndUp() {
 }
 
 interchangeArrowsDownAndUp();
-
-const responseURL = document.querySelector('.card__link');
-const responseText = document.querySelector('.form__share-subtitle');
-const twitterButton = document.querySelector('.share__twitter');
